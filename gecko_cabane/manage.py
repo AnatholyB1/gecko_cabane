@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/mnt/c/projet-django/gecko_cabane/gecko_cabane/env/Scripts python
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

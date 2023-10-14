@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\projet-django\gecko_cabane\gecko_cabane\env"
+VIRTUAL_ENV="/mnt/c/projet-django/gecko_cabane/gecko_cabane/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
