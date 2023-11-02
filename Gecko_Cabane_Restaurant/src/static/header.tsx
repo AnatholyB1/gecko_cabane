@@ -10,10 +10,10 @@ import {
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ShoppingCart } from "lucide-react"
-import { useState } from "react"
+
 
 export default function Header () {
-    const shop = useState<number>(0)
+    
     return (
         <div>
             <div className="flex w-full h-auto p-2 justify-between ">
