@@ -59,3 +59,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+.transition-font-size {
+  transition: font-size 0.3s;
+}
+
+
+.header-bg{
+  background-color: transparent;
+  background-image: linear-gradient(160deg, rgba(4,2,25,0.74) 0%, #dddd66 89%);
+  opacity: 0.48;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+
+
+
+

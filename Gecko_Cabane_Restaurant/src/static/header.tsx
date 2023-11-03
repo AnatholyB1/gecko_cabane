@@ -7,59 +7,142 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
   } from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ShoppingCart } from "lucide-react"
+import { Menu, ShoppingCart } from "lucide-react"
+import {useNavigate} from 'react-router-dom'
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 
 export default function Header () {
-    
+    const nav = useNavigate()
     return (
-        <div>
-            <div className="flex w-full h-auto p-2 justify-between ">
+        <div className="flex  flex-col w-screen md:h-[25rem] min-h-[20rem] md:max-h-[30rem] gqp-6 md:gap-12  ">
+            <div id='bg' className='header-bg md:h-[25rem] min-h-[20rem] md:max-h-[30rem] w-full'></div>
+            <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>
-                    <Button></Button>
-                    <p></p>
+                    <h1 className="transition-font-size hover:text-primary hover:cursor-pointer font-montserrat font-semibold leading-6 text-2xl md:text-xl transition-transform hover:scale-105" onClick={() => nav('/')}>Gecko Cabane Restaurant</h1>
+                    <p className="leading-6 text-xs font-Inter">French & Thai fusion food</p>
                 </div>
-                <NavigationMenu>
+                <NavigationMenu className="hidden  md:block "> 
                 <NavigationMenuList>
                     <NavigationMenuItem>
-                    <NavigationMenuTrigger className="hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink>Link</NavigationMenuLink>
+                        <NavigationMenuLink onClick={() => nav('/about')} className={cn(navigationMenuTriggerStyle(),' bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                            About
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink onClick={() => nav('/services')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                            Services
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink onClick={() => nav('/shop')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                            Shop
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink onClick={() => nav('/Contact')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                            Contact
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                    <NavigationMenuTrigger className=" bg-transparent hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
+                    <NavigationMenuContent className={''}>
+                        <NavigationMenuLink asChild>Link</NavigationMenuLink>
                     </NavigationMenuContent>
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),'cursor-pointer hover:bg-transparent hover:text-primary')}>
-                            Documentation
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),'cursor-pointer hover:bg-transparent hover:text-primary')}>
-                            Documentation
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),'cursor-pointer hover:bg-transparent hover:text-primary')}>
-                            Documentation
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),'cursor-pointer hover:bg-transparent hover:text-primary')}>
-                            Documentation
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem >
-                    <NavigationMenuTrigger className="hover:bg-transparent hover:text-primary"><div className="w-auto h-auto"><ShoppingCart className="w-6 h-6 stroke-1 z-1 bg-transparent hover:fill-primary"/><div className="fixed t-1 l-1 bg-white">1</div></div></NavigationMenuTrigger>
+                    <NavigationMenuItem className="overflow-visible" >
+                    <NavigationMenuTrigger className="nope transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <NavigationMenuLink>shop</NavigationMenuLink>
+                        <NavigationMenuLink >shop</NavigationMenuLink>
                     </NavigationMenuContent>
                     </NavigationMenuItem>
                 </NavigationMenuList>
                 </NavigationMenu>
+                <div className="  md:hidden transition-transform hover:scale-105 ">
+                    <DropdownMenu >
+                    <DropdownMenuTrigger asChild>
+                        <Button  ><Menu className="w-4 h-4 stroke-2"></Menu></Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-56">
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                            Profile
+                            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Billing
+                            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Settings
+                            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Keyboard shortcuts
+                            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        </DropdownMenuGroup>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuGroup>
+                        <DropdownMenuItem>Team</DropdownMenuItem>
+                        <DropdownMenuSub>
+                            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+                            <DropdownMenuPortal>
+                            <DropdownMenuSubContent>
+                                <DropdownMenuItem>Email</DropdownMenuItem>
+                                <DropdownMenuItem>Message</DropdownMenuItem>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem>More...</DropdownMenuItem>
+                            </DropdownMenuSubContent>
+                            </DropdownMenuPortal>
+                        </DropdownMenuSub>
+                        <DropdownMenuItem>
+                            New Team
+                            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        </DropdownMenuGroup>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>GitHub</DropdownMenuItem>
+                        <DropdownMenuItem>Support</DropdownMenuItem>
+                        <DropdownMenuItem disabled>API</DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                        Log out
+                        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
             </div>
-
-
+            <div className="flex flex-col p-4 w-full h-auto items-center align-center md:gap-4">
+                <div className="flex flex-col items-center align-center ">
+                    <h5 className="mb-1 md:mb-5 text-white font-vidaloka text-2xl font-medium italic tracking-[1.4px] text-shadow text-center">explore new taste</h5>
+                    <div className="border border-solid border-[rgba(0,175,43,0.93)] w-[100px]"></div> 
+                </div>
+                <h1 className="p-4 text-white font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
+                <div className="flex flex-row items-center w-full h-auto justify-evenly ">
+                    <Button className="rounded-full">LEARN MORE</Button>
+                    <Button className="rounded-full">BROWSE MENU</Button>
+                </div>
+            </div>
         </div>
     )
 }
