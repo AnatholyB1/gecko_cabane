@@ -57,7 +57,7 @@ function Comment({className} : {className?: string}) {
                     <p className="text-center home-info-p w-[300px] lg:w-[390px] ">" Not only should Wat Kaew Ko Wararam be visited, but also Gecko Cabane Restaurant. Try dishes of French and Thai cuisines at this restaurant. Gecko Cabane Restaurant offers you to try good pad thai, salmon and lamb shanks. According to the guests' opinions, waiters serve tasty parfait, caramel ice cream and cream caramel here. Come to this place for delicious belgian beer, wine or Mai tai. Take your chance to taste great iced coffee, thai tea or smoothies.
 
 The warm atmosphere of this spot makes customers feel relaxed and have a nice time. The atmosphere of hospitality of this restaurant highly depends on the staff, that is well-trained here. Terrific service is something that guests highlight in their comments. Here you will pay average prices. Cute decor lets the guests relax. Gecko Cabane Restaurant is rated on Google 4.6 by its visitors. "</p>
-                    <div className="flex justify-end "><Button title="View review" variant={'link'} className=" home-info-p  duration-300 transition-transform hover:scale-105 hover:text-primary"><a href="https://restaurantguru.com/Gecko-cabane-Restaurant-Ao-Nang">restaurantguru.com</a></Button></div>
+                    <div className="flex justify-end w-full "><Button title="View review" variant={'link'} className=" home-info-p  duration-300 transition-transform hover:scale-105 hover:text-primary"><a href="https://restaurantguru.com/Gecko-cabane-Restaurant-Ao-Nang">restaurantguru.com</a></Button></div>
                 </div>
             </section>
             )
