@@ -3,7 +3,7 @@ import Footer from "@/static/footer";
 
 export default function Layer({children}: {children? :React.ReactNode}) {
     return(
-        <div className="flex flex-col align-center w-screen h-screen overflow-y-auto">
+        <div className="grid drid-flow-row place-items-center w-screen h-screen overflow-y-auto">
             <Header/>
             {children}
             <Footer/>

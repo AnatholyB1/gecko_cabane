@@ -94,6 +94,19 @@
     letter-spacing: 1.7px;
 }
 
+.home-info-title{
+  color: #000000;
+  font-weight: 700;
+
+}
+
+.home-info-p{
+  color: #54595f;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2em;
+}
+
 
 
 

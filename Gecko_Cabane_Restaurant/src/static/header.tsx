@@ -25,17 +25,18 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Separator from "@/component/separator"
 
 
 
 export default function Header () {
     const nav = useNavigate()
     return (
-        <section className="flex  flex-col w-screen md:h-[25rem] min-h-[20rem] md:max-h-[30rem] gqp-6 md:gap-12  ">
-            <div id='bg' className='header-bg md:h-[25rem] min-h-[20rem] md:max-h-[30rem] w-full'></div>
+        <section className="flex  flex-col w-screen   min-h-[25rem] md:min-h-[30rem]  gap-6 md:gap-12  ">
+            <div id='bg' className='header-bg md:h-[30rem] min-h-[25rem]  w-full'></div>
             <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>
-                    <h1 className="transition-font-size hover:text-primary hover:cursor-pointer font-montserrat font-semibold leading-6 text-2xl md:text-xl transition-transform hover:scale-105" onClick={() => nav('/')}>Gecko Cabane Restaurant</h1>
+                    <h1 className="transition-font-size hover:text-primary hover:cursor-pointer font-montserrat font-semibold leading-6 text-2xl md:text-xl transition-transform hover:scale-105 w-[10rem] md:w-auto" onClick={() => nav('/')}>Gecko Cabane Restaurant</h1>
                     <p className="leading-6 text-xs font-Inter">French & Thai fusion food</p>
                 </div>
                 <NavigationMenu className="hidden  md:block "> 
@@ -135,11 +136,11 @@ export default function Header () {
             <div className="flex flex-col p-4 w-full h-auto items-center align-center md:gap-4">
                 <div className="flex flex-col items-center align-center ">
                     <h5 className="mb-1 md:mb-5 text-white font-vidaloka text-2xl font-medium italic tracking-[1.4px] text-shadow text-center">explore new taste</h5>
-                    <div className="border border-solid border-[rgba(0,175,43,0.93)] w-[100px]"></div> 
+                    <Separator></Separator>
                 </div>
                 <h1 className="p-4 text-white font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
                 <div className="flex flex-row items-center w-auto h-auto gap-6 ">
-                    <Button className="rounded-full">LEARN MORE</Button>
+                    <Button className="rounded-full" onClick={() => nav('/about')}>LEARN MORE</Button>
                     <Button className="rounded-full">BROWSE MENU</Button>
                 </div>
             </div>
