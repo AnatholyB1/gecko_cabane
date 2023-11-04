@@ -52,30 +52,30 @@ function Gallery({className} : {className?: string}) {
       }}
 
       modules={[EffectCoverflow,Keyboard]}
-       className="mySwiper p-[5rem]">
+       className="mySwiper first:p-[5rem]">
         <SwiperSlide >
           <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-4.jpg" />
         </SwiperSlide>
         <SwiperSlide> 
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-6.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-7.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="h-[10rem] w-[14rem ] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-5.jpg" />
