@@ -1,11 +1,10 @@
 import { cn } from "@/lib/utils";
 
 import { Swiper, SwiperSlide} from "swiper/react";
-import { FreeMode,EffectCoverflow, Autoplay, Pagination, Keyboard} from 'swiper/modules';
+import { FreeMode,EffectCoverflow, Autoplay, Keyboard} from 'swiper/modules';
 
 
 // Import Swiper styles
-import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import "swiper/css";
 import 'swiper/css/effect-coverflow';
@@ -40,11 +39,22 @@ function Gallery({className} : {className?: string}) {
         delay: 6000,  
         disableOnInteraction: false,
       }}
-      pagination={{
-        clickable: true,
+      breakpoints={{
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
       }}
 
-      modules={[FreeMode,EffectCoverflow,Autoplay, Pagination,Keyboard]}
+      modules={[FreeMode,EffectCoverflow,Autoplay,Keyboard]}
        className="mySwiper">
  <SwiperSlide>
           <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-1.jpg" />
