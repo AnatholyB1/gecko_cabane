@@ -78,7 +78,7 @@ export default function Header () {
                 <div className="  md:hidden transition-transform hover:scale-105 ">
                     <DropdownMenu >
                     <DropdownMenuTrigger asChild>
-                        <Button  ><Menu className="w-4 h-4 stroke-2"></Menu></Button>
+                        <Button title="link menu" ><Menu className="w-4 h-4 stroke-2"></Menu></Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-56">
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -140,8 +140,8 @@ export default function Header () {
                 </div>
                 <h1 className="p-4 text-white font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
                 <div className="flex flex-row items-center w-auto h-auto gap-6 ">
-                    <Button className="rounded-full" onClick={() => nav('/about')}>LEARN MORE</Button>
-                    <Button className="rounded-full">BROWSE MENU</Button>
+                    <Button title='link about' className="rounded-full" onClick={() => nav('/about')}>LEARN MORE</Button>
+                    <Button title="link menu" className="rounded-full">BROWSE MENU</Button>
                 </div>
             </div>
         </section>
