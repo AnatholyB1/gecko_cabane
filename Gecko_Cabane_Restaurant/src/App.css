@@ -75,6 +75,24 @@
   z-index: -1;
 }
 
+.lietmotiv{
+  text-align: center;
+    color: #4c5863;
+    font-family: Playfair Display, Sans-serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7em;
+
+}
+
+.lietmotiv-quote{
+  text-align: center;
+    color: rgba(76,88,99,0.62);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.7em;
+    letter-spacing: 1.7px;
+}
 
 
 

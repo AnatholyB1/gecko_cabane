@@ -31,7 +31,7 @@ import {
 export default function Header () {
     const nav = useNavigate()
     return (
-        <div className="flex  flex-col w-screen md:h-[25rem] min-h-[20rem] md:max-h-[30rem] gqp-6 md:gap-12  ">
+        <section className="flex  flex-col w-screen md:h-[25rem] min-h-[20rem] md:max-h-[30rem] gqp-6 md:gap-12  ">
             <div id='bg' className='header-bg md:h-[25rem] min-h-[20rem] md:max-h-[30rem] w-full'></div>
             <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>
@@ -138,11 +138,11 @@ export default function Header () {
                     <div className="border border-solid border-[rgba(0,175,43,0.93)] w-[100px]"></div> 
                 </div>
                 <h1 className="p-4 text-white font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
-                <div className="flex flex-row items-center w-full h-auto justify-evenly ">
+                <div className="flex flex-row items-center w-auto h-auto gap-6 ">
                     <Button className="rounded-full">LEARN MORE</Button>
                     <Button className="rounded-full">BROWSE MENU</Button>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

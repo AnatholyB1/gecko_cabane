@@ -11,7 +11,7 @@ import {useNavigate} from 'react-router-dom'
 export default function Footer () {
     const nav = useNavigate()
     return (
-        <div className="w-screen min-h-[10rem] flex bg-black items-center flex-col align-center gap-4">
+        <section className="w-screen min-h-[10rem] flex bg-black items-center flex-col align-center gap-4">
             <NavigationMenu className="h-auto w-auto ">
                 <NavigationMenuList>
                     <NavigationMenuItem>
@@ -37,6 +37,6 @@ export default function Footer () {
                 </NavigationMenuList>
             </NavigationMenu>
             <span className="text-white flex-1 text-center  ">1 36-37 Soi Ruam Jit Tambon Pak Nam, Krabi Chang Wat Krabi 81000, TH | Phone: +66 81 958 5945 | <br /> Email: geckocabanerestaurant@gmail.com</span>
-        </div>
+        </section>
     )
 }
