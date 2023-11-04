@@ -122,6 +122,29 @@
 }
 
 
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: black;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 14rem !important;
+  height: 10rem !important;
+  background-color: black;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  background-color: black;
+}
+
+
+
 
 
 

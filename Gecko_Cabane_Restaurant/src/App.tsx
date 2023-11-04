@@ -7,6 +7,7 @@ import Services from './page/services.tsx'
 import Shop from './page/shop.tsx'
 import Contact from './page/contact.tsx'
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route >
@@ -20,7 +21,6 @@ const router = createBrowserRouter(
 )
 
 function App() {
-
 
   return ( 
      

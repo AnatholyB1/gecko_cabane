@@ -23,7 +23,7 @@ function Comment({className} : {className?: string}) {
                 </div>
                 <div className="hidden lg:flex w-full h-full flex-col items-center justify-center  ">
                     <div  className="relative" >
-                        <Button  title="link" className={`z-10 w-[3rem] h-[3rem] rounded-full ${!animate && 'animate-bounce' }`} onClick={() => setAnimate(!animate)}><Menu></Menu></Button>
+                        <Button  title="link" className={`z-10 w-[3rem] h-[3rem]  rounded-full ${!animate && 'animate-bounce' }`} onClick={() => setAnimate(!animate)}><Menu></Menu></Button>
                         <a  title="Lonely PLanet" className={`transition ease-in-out duration-500  absolute top-0 left-0  ${
                             animate ? 'translate-y-[5rem] z-10' : 'z-[-1]'
                             } bg-slate-400/20 w-[3rem] h-[3rem] rounded-full`} href="https://www.lonelyplanet.com/thailand/krabi-town/restaurants/gecko-cabane/a/poi-eat/1572474/357601"><LonelyPlanetIcon className="transition duration-300 rounded-full w-full h-full fill-blue-800 hover:scale-150"  /></a>
