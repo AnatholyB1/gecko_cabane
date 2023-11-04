@@ -1,7 +1,9 @@
 import { cn } from "@/lib/utils";
 
 import { Swiper, SwiperSlide} from "swiper/react";
-import { FreeMode,EffectCoverflow, Autoplay, Keyboard} from 'swiper/modules';
+import { EffectCoverflow, Keyboard} from 'swiper/modules';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faPinterest} from '@fortawesome/free-brands-svg-icons'
 
 
 // Import Swiper styles
@@ -31,13 +33,8 @@ function Gallery({className} : {className?: string}) {
         slideShadows: true,
       }}
       loop={true}
-      freeMode={true}
       keyboard={{
         enabled: true,
-      }}
-      autoplay={{
-        delay: 6000,  
-        disableOnInteraction: false,
       }}
       breakpoints={{
         640: {
@@ -54,36 +51,37 @@ function Gallery({className} : {className?: string}) {
         },
       }}
 
-      modules={[FreeMode,EffectCoverflow,Autoplay,Keyboard]}
-       className="mySwiper">
- <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-1.jpg" />
+      modules={[EffectCoverflow,Keyboard]}
+       className="mySwiper p-[5rem]">
+        <SwiperSlide >
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-3.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-4.jpg" />
         </SwiperSlide>
         <SwiperSlide> 
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-6.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-6.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-7.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-7.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem]" src="https://swiperjs.com/demos/images/nature-8.jpg" />
+          <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem !important]" src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img className="h-[10rem] w-[14rem ] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </SwiperSlide>
       </Swiper>
+      <a title="Pinterest" href="https://www.pinterest.com/geckocabanerestaurant0059/"><FontAwesomeIcon className="w-[3rem] h-[3rem] transition hover:scale-125 duration-300 divide-neutral-200  text-red-700" icon={faPinterest}  /></a>
     </section> );
 }
 

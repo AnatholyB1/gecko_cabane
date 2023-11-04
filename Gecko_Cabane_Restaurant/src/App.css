@@ -92,6 +92,7 @@
     font-weight: 600;
     line-height: 1.7em;
     letter-spacing: 1.7px;
+
 }
 
 .home-info-title{
@@ -141,6 +142,13 @@
   display: block;
   width: 100%;
   background-color: black;
+}
+
+.swiper-3d .swiper-slide-shadow-left{
+  background-image: none !important;
+}
+.swiper-3d .swiper-slide-shadow-right{
+  background-image: none !important;
 }
 
 
