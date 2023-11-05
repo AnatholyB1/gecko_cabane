@@ -151,9 +151,45 @@
   background-image: none !important;
 }
 
+@media (min-width: 768px) {
+  .service-page{
+    min-height: calc(100vh - 40rem);
+  }
+}
 
+.service-page{
+  min-height: calc(100vh - 35rem);
+}
 
+.ski{
+  rotate: 30deg;
+}
 
+.ski-loop{
+  animation: walk-cycle 4s steps(120) infinite;
+}
+
+@keyframes walk-cycle {  
+  0% {transform: translateX(0px) translateY(0px) } 
+  10% {transform: translateX(5px) translateY(7px)}
+  20% {transform: translateX(10px) translateY(24px)}
+  30% {transform: translateX(15px) translateY(21px)}
+  40% {transform: translateX(20px) translateY(30px)}
+  50% {transform: translateX(25px) translateY(48px)}
+  60% {transform: translateX(30px) translateY(42px)}
+  70% {transform: translateX(35px) translateY(49px)}
+  80% {transform: translateX(40px) translateY(63px)}
+  90% {transform: translateX(45px) translateY(70px) }
+}
+
+.powder-loop{
+  animation: fly 0.5s steps(50) infinite;
+}
+
+@keyframes fly{
+  0% {transform : translateX(0) translateY(0) }
+  100% {transform : translateX(-5px) translateY(-5px)}
+}
 
 
 

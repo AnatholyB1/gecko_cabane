@@ -11,31 +11,31 @@ import {useNavigate} from 'react-router-dom'
 export default function Footer () {
     const nav = useNavigate()
     return (
-        <section className="w-screen min-h-[10rem] flex bg-black items-center flex-col align-center gap-4">
+        <section className="w-screen min-h-[10rem] flex bg-black items-center flex-col align-center gap-4 px-5">
             <NavigationMenu className="h-auto w-auto ">
                 <NavigationMenuList>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/about')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer  bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/about')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer md:px-4 px-1  bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             About
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/services')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/services')} className={cn(navigationMenuTriggerStyle(),'text-white md:px-4 px-1 cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             Services
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/shop')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/shop')} className={cn(navigationMenuTriggerStyle(),'text-white md:px-4 px-1 cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             Shop
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/contact')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/contact')} className={cn(navigationMenuTriggerStyle(),'text-white md:px-4 px-1 cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             Contact
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/privacy-policy')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/privacy-policy')} className={cn(navigationMenuTriggerStyle(),'text-white md:px-4 px-1 cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             Privacy Policy
                         </NavigationMenuLink>
                     </NavigationMenuItem>

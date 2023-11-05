@@ -32,7 +32,7 @@ import Separator from "@/component/separator"
 export default function Header () {
     const nav = useNavigate()
     return (
-        <section className="flex  flex-col w-screen   min-h-[25rem] md:min-h-[30rem]  gap-6 md:gap-12  ">
+        <section className="flex  flex-col w-screen   min-h-[25rem] md:min-h-[30rem]  gap-6 md:gap-12 px-2 ">
             <div id='bg' className='header-bg md:h-[30rem] min-h-[25rem]  w-full'></div>
             <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>
