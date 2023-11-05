@@ -52,7 +52,7 @@ function Gallery({className} : {className?: string}) {
       }}
 
       modules={[EffectCoverflow,Keyboard]}
-       className="mySwiper first:p-[5rem]">
+       className="mySwiper first:py-[5rem]">
         <SwiperSlide >
           <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
@@ -78,7 +78,7 @@ function Gallery({className} : {className?: string}) {
           <img className="h-[10rem] w-[14rem] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-8.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="h-[10rem] w-[14rem ] shadow-2xl  shadow-primary/50 rounded-md" src="https://swiperjs.com/demos/images/nature-5.jpg" />
+          <img className="h-[10rem] w-[14rem ] shadow-2xl  shadow-primary/50 rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-5.jpg" />
         </SwiperSlide>
       </Swiper>
       <a title="Pinterest" href="https://www.pinterest.com/geckocabanerestaurant0059/"><FontAwesomeIcon className="w-[3rem] h-[3rem] transition hover:scale-125 duration-300 divide-neutral-200  text-red-700" icon={faPinterest}  /></a>

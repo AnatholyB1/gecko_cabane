@@ -6,6 +6,7 @@ import About from './page/about.tsx'
 import Services from './page/services.tsx'
 import Shop from './page/shop.tsx'
 import Contact from './page/contact.tsx'
+import Privacypolicy from './page/privacy-policy.tsx'
 
 
 const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
         <Route path='services' element={<Services/>} ></Route>
         <Route path='shop' element={<Shop/>} ></Route>
         <Route path='contact' element={<Contact/>} ></Route>
+        <Route path='privacy-policy' element={<Privacypolicy/>} ></Route>
     </Route>
   )
 )

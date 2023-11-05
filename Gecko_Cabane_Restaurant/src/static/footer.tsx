@@ -30,8 +30,13 @@ export default function Footer () {
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/Contact')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                        <NavigationMenuLink onClick={() => nav('/contact')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             Contact
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink onClick={() => nav('/privacy-policy')} className={cn(navigationMenuTriggerStyle(),'text-white cursor-pointer bg-transparent hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
+                            Privacy Policy
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                 </NavigationMenuList>
