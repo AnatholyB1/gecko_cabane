@@ -193,7 +193,7 @@
   100% {transform : translateX(-5px) translateY(-5px)}
 }
 
-.rotate{
+.error-fix{
   animation: rotateLoop 1s steps(2) infinite;
 }
 
