@@ -22,15 +22,16 @@ function CGU() {
         const cgu = localStorage.getItem('cgu')
         if(cgu == 'true')
         {
-            nav('privacy-policy')
+            nav('/privacy-policy')
         }
     })
 
 
 
     const handleAccept = () => {
+        
         localStorage.setItem('cgu','true')
-        nav('privacy-policy')
+        nav('/privacy-policy')
     }
     return (
         <div className="relative overflow-x-hidden ">
