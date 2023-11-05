@@ -7,11 +7,13 @@ import Services from './page/services.tsx'
 import Shop from './page/shop.tsx'
 import Contact from './page/contact.tsx'
 import Privacypolicy from './page/privacy-policy.tsx'
+import NotFound from './page/404notfound.tsx'
+import { ThemeProvider } from "@/components/theme-provider"
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route >
+    <Route errorElement={<NotFound/>} >
         <Route path='/' element={<Home/>} ></Route>
         <Route path='about' element={<About/>} ></Route>
         <Route path='services' element={<Services/>} ></Route>
@@ -25,9 +27,10 @@ const router = createBrowserRouter(
 function App() {
 
   return ( 
-     
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <RouterProvider router={router} />
-  )
+    </ThemeProvider>)
 }
 
 export default App
+

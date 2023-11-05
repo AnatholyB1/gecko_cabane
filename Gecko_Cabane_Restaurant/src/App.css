@@ -191,6 +191,18 @@
   100% {transform : translateX(-5px) translateY(-5px)}
 }
 
+.rotate{
+  animation: rotateLoop 3s steps(150) infinite;
+}
 
+@keyframes rotateLoop {  
+  0% {transform: rotate(0) }
+  50%  {transform: rotate(40deg) } 
+  100% {transform: rotate(0deg) } 
 
+}
+
+.wrench{
+  transform-origin:  75% 25% ;
+}
 

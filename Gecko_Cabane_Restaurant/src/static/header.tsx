@@ -27,9 +27,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Separator from "@/component/separator"
 
+import { useTheme } from "@/components/theme-provider"
+import { Moon, Sun } from "lucide-react"
 
 
 export default function Header () {
+    const { setTheme } = useTheme()
     const nav = useNavigate()
     return (
         <section className="flex  flex-col w-screen   min-h-[25rem] md:min-h-[30rem]  gap-6 md:gap-12 px-2 ">
@@ -41,6 +44,28 @@ export default function Header () {
                 </div>
                 <NavigationMenu className="hidden  md:block "> 
                 <NavigationMenuList>
+                    <NavigationMenuItem>
+                    <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="icon">
+                        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        <span className="sr-only">Toggle theme</span>
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                        <DropdownMenuItem onClick={() => setTheme("light")}>
+                        Light
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setTheme("dark")}>
+                        Dark
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setTheme("system")}>
+                        System
+                        </DropdownMenuItem>
+                    </DropdownMenuContent>
+                    </DropdownMenu>
+                    </NavigationMenuItem>
                     <NavigationMenuItem>
                         <NavigationMenuLink onClick={() => nav('/about')} className={cn(navigationMenuTriggerStyle(),' bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
                             About
@@ -63,12 +88,13 @@ export default function Header () {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                     <NavigationMenuTrigger className=" bg-transparent hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
-                    <NavigationMenuContent className={''}>
-                        <NavigationMenuLink asChild>Link</NavigationMenuLink>
+                    <NavigationMenuContent >
+                       
+                        
                     </NavigationMenuContent>
                     </NavigationMenuItem>
                     <NavigationMenuItem className="overflow-visible" >
-                    <NavigationMenuTrigger className="nope transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink >shop</NavigationMenuLink>
                     </NavigationMenuContent>
