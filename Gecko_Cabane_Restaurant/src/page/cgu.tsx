@@ -83,7 +83,6 @@ function CGU() {
             {
                 setBg(true)
             }
-            console.log(state)
         }
         }
         className={`${focus  && 'hidden'} overflow-x-hidden   ${bg  && 'hidden'} top-0 left-[-10%] w-[120%] absolute z-[-1]`}   
