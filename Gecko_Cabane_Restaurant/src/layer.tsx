@@ -10,9 +10,11 @@ export default function Layer({children,className}: {children? :React.ReactNode,
         const cgu = localStorage.getItem('cgu')
         if(cgu != 'true')
         {
-            if(window.location.href != 'https://gecko-cabane.vercel-app/cgu')
+            if(window.location.href != 'https://gecko-cabane.vercel.app/cgu')
             {
                 nav('cgu')
+            }else{
+               
             }   
         }
     },[localStorage.getItem('cgu')]   )
