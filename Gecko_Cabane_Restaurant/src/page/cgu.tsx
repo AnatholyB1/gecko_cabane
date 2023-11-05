@@ -29,15 +29,15 @@ function CGU() {
 
 
     const handleAccept = () => {
-        
+
         localStorage.setItem('cgu','true')
         nav('/privacy-policy')
     }
     return (
         <div className="relative overflow-x-hidden ">
         <Layer className={`${focus  && 'blur'} overflow-x-hidden`}>
-            <section className={`grid w-full grid-flow-row place-items-center gap-4 h-auto py-[5rem] px-5 text-center home-info-p ${bg ? 'bg-white w-full' : '' }`}>
-                <div className={` overflow-y-auto grid grid-flow-row  max-h-[600px] place-items-center gap-4 h-auto ${bg ? 'bg-white w-full' : 'bg-white/90 '}  py-[5rem] px-5 text-center home-info-p `}>
+            <section className={`grid w-full grid-flow-row place-items-center gap-4 h-auto py-[5rem]  px-5 text-center home-info-p ${bg ? 'bg-white w-full' : '' }`}>
+                <div className={` overflow-y-auto grid grid-flow-row  max-h-[600px] place-items-center rounded-xl gap-4 h-auto ${bg ? 'bg-white w-full' : 'bg-white/90 '}  py-[5rem] px-5 text-center home-info-p `}>
                     <h2>Terms and Conditions of Site Use</h2>
                     <p>This site is intended for personal, non-commercial use.</p>
                     <p>Any reproduction, modification, distribution, or commercial use without prior authorization is strictly prohibited.</p>
@@ -51,13 +51,13 @@ function CGU() {
                 <Button onClick={() => handleAccept()}>Accept</Button>
             </section> 
         </Layer>
-        <div className={`${!focus ? 'hidden' : " overflow-x-hidden absolute top-0 left-0 w-[100% - 20rem]  z-index-[9999] blur-container h-auto m-8 lg:m-[10rem] xl:mx-[20rem]"}`}>
+        <div className={`${!focus ? 'hidden' : " overflow-x-hidden absolute top-0 left-0 w-[100% - 20rem]  z-index-[9999]  blur-container h-auto m-8 md:mx-[7rem]   lg:my-[10rem] lg:mx-[15rem]  xl:mx-[25rem]"}`}>
             <Card className= "grid place-items-center">
                 <CardHeader className="w-full">
                     <CardTitle>General Condition of Use</CardTitle> 
                     <CardDescription>Little bit of reading</CardDescription>
                 </CardHeader>
-                <CardContent className="grid  grid-flow-row h-auto min-w-[300px] max-w-[80%] mg:min-w-[700px] max-h-[500px] bg-white py-[5rem] px-5 text-center overflow-y-auto sm:overflow-hidden ">
+                <CardContent className="grid  grid-flow-row h-auto min-w-[300px] max-w-[80%] mg:min-w-[700px] max-h-[400px]  bg-white py-[5rem] px-5 text-center overflow-y-auto sm:overflow-hidden ">
                     <h2>Terms and Conditions of Site Use</h2>
                     <p>This site is intended for personal, non-commercial use.</p>
                     <p>Any reproduction, modification, distribution, or commercial use without prior authorization is strictly prohibited.</p>
@@ -86,7 +86,7 @@ function CGU() {
             }
         }
         }
-        className={`${focus  && 'hidden'} overflow-x-hidden   ${bg  && 'hidden'} top-0 left-[-10%] w-[120%] absolute z-[-1]`}   
+        className={`${focus  && 'hidden'} overflow-x-hidden   ${bg  && 'hidden'} top-[200px]   md:top-[20px] left-[-10%] w-[120%] absolute z-[-1]`}   
         >
             <Controls
             visible={false}

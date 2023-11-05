@@ -12,6 +12,8 @@ export default function Layer({children,className}: {children? :React.ReactNode,
         {
                 nav('/cgu')
 
+        }else{
+            nav('/')
         }
     },[localStorage.getItem('cgu')]   )
     return(
