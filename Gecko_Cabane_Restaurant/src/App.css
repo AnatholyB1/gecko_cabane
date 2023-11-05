@@ -154,11 +154,13 @@
 @media (min-width: 768px) {
   .service-page{
     min-height: calc(100vh - 40rem);
+    height: auto;
   }
 }
 
 .service-page{
-  min-height: calc(100vh - 35rem);
+  min-height: calc(100vh - 20rem);
+  height: auto;
 }
 
 .ski{
