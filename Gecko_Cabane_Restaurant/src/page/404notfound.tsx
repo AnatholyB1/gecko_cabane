@@ -6,7 +6,7 @@ function NotFound() {
     const nav =useNavigate()
     return ( 
         <Layer>
-            <section className="grid place-items-center grid-flow-row  bg-white py-[5rem] w-full h-[700px] service-page">
+            <section className="grid place-items-center grid-flow-row  bg-white py-[5rem] w-full h-[700px] service-page min-h-[40rem]">
                 <h1 className="text-primary text-center text-2xl font-bold leading-10 transition-all duration-300 md:text-4xl hover:scale-150">404 NOT FOUND !</h1>
                 <div title="going back ?" onClick={() => nav('./')} className="relative hover:scale-110 transition-all duration-300 delay-150  cursor-pointer ">
                     <Wrench className="absolute w-[300px] h-[300px] wrench  top-[-47px] left-[-200px] error-fix stroke-1 text-primary fill-primary  "></Wrench>

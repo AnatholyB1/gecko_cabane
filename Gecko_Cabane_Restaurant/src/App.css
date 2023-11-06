@@ -154,7 +154,7 @@
 
 @media (min-width: 768px) {
   .service-page{
-    min-height: calc(100vh - 40rem);
+  
     height: auto;
   }
 }
