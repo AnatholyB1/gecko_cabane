@@ -15,13 +15,13 @@ import CGU from './page/cgu.tsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<NotFound/>}  >
-        <Route path='/' element={<Home/>} ></Route>
-        <Route path='about' element={<About/>} ></Route>
-        <Route path='services' element={<Services/>} ></Route>
-        <Route path='shop' element={<Shop/>} ></Route>
-        <Route path='contact' element={<Contact/>} ></Route>
-        <Route path='privacy-policy' element={<Privacypolicy/>} ></Route>
-        <Route path='cgu' element={<CGU/>}></Route>
+        <Route path='/' element={<Home/>} errorElement={<NotFound/>} ></Route>
+        <Route path='about' element={<About/>} errorElement={<NotFound/>} ></Route>
+        <Route path='services' element={<Services/>} errorElement={<NotFound/>} ></Route>
+        <Route path='shop' element={<Shop/>} errorElement={<NotFound/>} ></Route>
+        <Route path='contact' element={<Contact/>} errorElement={<NotFound/>}></Route>
+        <Route path='privacy-policy' element={<Privacypolicy/>} errorElement={<NotFound/>} ></Route>
+        <Route path='cgu' element={<CGU/>} errorElement={<NotFound/>}></Route>
     </Route>
   )
 )
@@ -30,7 +30,7 @@ function App() {
 
   return ( 
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
+        <RouterProvider router={router}   />
     </ThemeProvider>)
 }
 

@@ -33,6 +33,7 @@ function CGU() {
         localStorage.setItem('cgu','true')
         nav('/privacy-policy')
     }
+    
     return (
         <div className="relative overflow-x-hidden ">
         <Layer className={`${focus  && 'blur'} overflow-x-hidden`}>
