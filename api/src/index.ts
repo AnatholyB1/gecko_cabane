@@ -16,13 +16,14 @@ app.use(boydParser.json());	// Parser les requêtes en JSON
 app.use(cookieParser());	// Parser les cookies
 
 const server = http.createServer(app);	// Création du serveur HTTP
-
+import dotenv from 'dotenv';
+dotenv.config();
+const MONGO_URL = process.env.MONGO_CONNECTION || 'mongodb://localhost:27017/express-mongo';	// Connexion à la base de données MongoDB
 
 server.listen(8080, () => {
     console.log('Server running on port 8080');
 });	// Démarrage du serveur sur le port 8080
 
-const MONGO_URL =  "mongodb+srv://geckoCabaneAdmin:kBfmodeuQFj6cegP@mycluster.enclzip.mongodb.net/MyCluster?retryWrites=true&w=majority"
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
