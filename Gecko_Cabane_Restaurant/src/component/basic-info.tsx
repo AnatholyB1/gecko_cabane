@@ -1,6 +1,13 @@
 import { cn } from "@/lib/utils";
 import Separator from "./separator";
+//import Map from "./map-component/Map";
+//import googleMapReact from "google-map-react";
 
+//const location : googleMapReact.Coords = {
+
+ //   lat: 37.42216,
+  //  lng: -122.08427,
+ // } // our location object from earlier
 
 function Info ({className } : {className ?: string}) {
     return ( 
@@ -13,11 +20,15 @@ function Info ({className } : {className ?: string}) {
                 <h5 className="secondary-title">EMAIL US</h5>
                 <a type="email" className="home-info-p hover:text-primary transition duration-300 delay-150 hover:scale-105" href="mailto:geckocabanerestaurant@gmail.com">geckocabanerestaurant@gmail.com</a>
                 <h5  className="secondary-title">CALL US</h5>
-                <a type={'phone'} className="home-info-p hover:text-primary transition duration-300 delay-150 hover:scale-105" href="">+66 81 958 5945</a>
+                <a type={'phone'} className="home-info-p hover:text-primary transition duration-300 delay-150 hover:scale-105" href={`tel:+66819585945`}>+66 81 958 5945</a>
             </div>
-             <iframe className="md:w-[500px] w-full h-[500px]" src="https://www.google.com/maps/place/Gecko+cabane+Restaurant/@8.0614465,98.9156215,15z/data=!4m5!3m4!1s0x0:0xb21ff72120dc1200!8m2!3d8.0614465!4d98.9156215" ></iframe>
+             <div className="bg-primary w-[300px] h-[300px] md:w-[500px] md:h-[500px] text-center grid place-items-center transition-all durantion-300 delay-150 hover:scale-105  ">
+                Map here soon...
+             </div>
         </section>
      )
 }
 
 export default Info;    
+
+//<Map location={location} zoomLevel={17} text= {'1600 Amphitheatre Parkway, Mountain View, california.'} ></Map>
