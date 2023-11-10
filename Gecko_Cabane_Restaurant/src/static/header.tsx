@@ -23,15 +23,15 @@ export default function Header () {
             </div>
             <div className="flex flex-col p-4 w-full h-auto items-center align-center md:gap-4">
                 <div className="flex flex-col items-center align-center ">
-                    <h5 className="mb-1 md:mb-5 text-white font-vidaloka text-2xl font-medium italic tracking-[1.4px] text-shadow text-center">explore new taste</h5>
+                    <h3 className="mb-1 md:mb-5 text-black font-vidaloka text-2xl font-medium italic tracking-[1.4px] text-shadow text-center">explore new taste</h3>
                     <Separator></Separator>
                 </div>
-                <h1 className="p-4 text-white font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
+                <h1 className="p-4 text-black font-serif text-4xl font-extrabold uppercase tracking-wider text-shadow text-center">GECKO CABANE RESTAURANT</h1>
                 <div className="flex flex-row items-center w-auto h-auto gap-6 ">
-                    <Button title='link about' className="rounded-full transition duration-300 hover:scale-110">
+                    <Button id="about" title='link about' className="rounded-full transition duration-300 hover:scale-110">
                         <Link to='/about'>ABOUT US</Link>
                     </Button>
-                    <Button title="link menu" className="rounded-full transition duration-300 hover:scale-110">
+                    <Button id="menu" title="link menu" className="rounded-full transition duration-300 hover:scale-110">
                         <Link to='/menu'>BROWSE MENU</Link></Button>
                 </div>
             </div>

@@ -19,7 +19,7 @@ function HomeInfo({ className} : { className? : string}) {
                         <p className='text-center home-info-p'>Open time :</p>
                         <p className='text-center home-info-p'>17:00 - 23:00</p>
                     </div>
-                    <Button title="link about" className="flex gap-2 hover:scale-105 transition-transform" onClick={() => nav('/about')} variant={'link'}><BookOpen className='w-4 h-4 stroke-1'></BookOpen> Read More</Button>
+                    <Button id="link about" title="link about" className="flex gap-2 hover:scale-105 transition-transform" onClick={() => nav('/about')} variant={'link'}><BookOpen className='w-4 h-4 stroke-1'></BookOpen> Read More</Button>
             </section> );
 }
 

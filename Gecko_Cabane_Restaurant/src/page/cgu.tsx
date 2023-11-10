@@ -49,7 +49,7 @@ function CGU() {
                     <p>Certain parts of this site may integrate content from the Pinterest application.</p>
                     <p>The use of this content is subject to Pinterest's terms of use.</p>
                 </div>
-                <Button onClick={() => handleAccept()}>Accept</Button>
+                <Button id="accept" onClick={() => handleAccept()}>Accept</Button>
             </section> 
         </Layer>
         <div className={`${!focus ? 'hidden' : " overflow-x-hidden absolute top-0 left-0 w-[100% - 20rem]  z-index-[9999]  blur-container h-auto m-8 md:mx-[7rem]   lg:my-[10rem] lg:mx-[15rem]  xl:mx-[25rem]"}`}>
@@ -70,8 +70,8 @@ function CGU() {
                     <p>The use of this content is subject to Pinterest's terms of use.</p>
                 </CardContent>  
                 <CardFooter className="flex justify-between w-full">
-                    <Button onClick={() => setFocus(false)} variant="outline">Cancel</Button>
-                    <Button onClick={() => handleAccept()}>Accept</Button>
+                    <Button id="foccus" onClick={() => setFocus(false)} variant="outline">Cancel</Button>
+                    <Button id="accept" onClick={() => handleAccept()}>Accept</Button>
                 </CardFooter>
             </Card>
         </div >

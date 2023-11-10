@@ -102,7 +102,7 @@ function FormComponent({className} : {className?: string}) {
                         </FormItem>
                     )}
                     />
-                    <Button type="submit">Submit</Button>
+                    <Button id="submit" type="submit">Submit</Button>
                 </form>
                 </Form>
             </section>

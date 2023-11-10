@@ -57,7 +57,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: linear-gradient(160deg, rgba(4,2,25,0.74) 0%, #dddd66 89%);
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+
   }
 }
 
