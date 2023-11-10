@@ -2,12 +2,11 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { Menu, Moon, Sun } from "lucide-react";
-import {useNavigate} from 'react-router-dom'
 import { useTheme } from "@/components/theme-provider";
+import { Link} from 'react-router-dom';
 
 function DropDownMain ({className} : {className?: string}) {
     const { setTheme } = useTheme()
-    const nav = useNavigate()
     return (
         <section className={cn(className, '')}>
             <DropdownMenu >
@@ -20,7 +19,7 @@ function DropDownMain ({className} : {className?: string}) {
                     <DropdownMenuGroup>
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
-                                Menu
+                                <Link to="/menu">Menu</Link> 
                             </DropdownMenuSubTrigger>
                             <DropdownMenuSubContent>
                                 <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" >
@@ -31,20 +30,20 @@ function DropDownMain ({className} : {className?: string}) {
                                 </DropdownMenuItem>
                             </DropdownMenuSubContent>
                         </DropdownMenuSub>
-                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" onClick={() => nav('/about')}>
-                            About
+                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                            <Link to="/about">About</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" onClick={() => nav('/services')}>
-                            Services
+                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                            <Link to="/services">Services</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" onClick={() => nav('/shop')}>
-                            Shop
+                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                            <Link to="/shop">Shop</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" onClick={() => nav('/contact')}>
-                            Contact
+                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                            <Link to="/contact">Contact</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" onClick={() => nav('/privacy-policy')}>
-                            Privacy Policy
+                        <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                            <Link to="/privacy-policy">Privacy Policy</Link>
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />

@@ -1,15 +1,15 @@
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider"
 import { Moon, ShoppingCart, Sun } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import {useNavigate} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function NavBarre({className} : {className?: string}) {
 
     const { setTheme } = useTheme()
-    const nav = useNavigate()
+
     
     return (
         <section className={cn(className,'')}>
@@ -38,24 +38,16 @@ function NavBarre({className} : {className?: string}) {
                     </DropdownMenu>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/about')} className={cn(navigationMenuTriggerStyle(),' bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
-                            About
-                        </NavigationMenuLink>
+                            <Link className={cn(navigationMenuTriggerStyle(),' bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/about">About</Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/services')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
-                            Services
-                        </NavigationMenuLink>
+                            <Link className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/services">Services</Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/shop')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
-                            Shop
-                        </NavigationMenuLink>
+                            <Link className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/shop">Shop</Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuLink onClick={() => nav('/Contact')} className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')}>
-                            Contact
-                        </NavigationMenuLink>
+                            <Link className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/contact">Contact</Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                     <NavigationMenuTrigger className=" bg-transparent hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
@@ -67,7 +59,7 @@ function NavBarre({className} : {className?: string}) {
                     <NavigationMenuItem className="overflow-visible" >
                     <NavigationMenuTrigger className="transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <NavigationMenuLink >shop</NavigationMenuLink>
+                        <Link className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/shop">Shop</Link>
                     </NavigationMenuContent>
                     </NavigationMenuItem>
                 </NavigationMenuList>

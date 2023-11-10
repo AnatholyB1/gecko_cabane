@@ -8,6 +8,7 @@ import Shop from './page/shop.tsx'
 import Contact from './page/contact.tsx'
 import Privacypolicy from './page/privacy-policy.tsx'
 import NotFound from './page/404notfound.tsx'
+import Menu from './page/menu.tsx'
 import { ThemeProvider } from "@/components/theme-provider"
 import CGU from './page/cgu.tsx'
 
@@ -23,6 +24,8 @@ const router = createBrowserRouter(
         <Route path='privacy-policy' element={<Privacypolicy/>}  ></Route>
         <Route path='cgu' element={<CGU/>} ></Route>
         <Route path='not-found' element={<NotFound/>} ></Route>
+        <Route path='*' element={<NotFound/>} ></Route>
+        <Route path='menu' element={<Menu/>} ></Route>
     </Route>
   )
 )
