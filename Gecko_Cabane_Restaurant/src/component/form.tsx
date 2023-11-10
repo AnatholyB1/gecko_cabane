@@ -13,7 +13,6 @@ import {
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
-import { Resend } from 'resend';
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -32,7 +31,7 @@ const formSchema = z.object({
 
 
 function FormComponent({className} : {className?: string}) {
-    const resend :any = new Resend('re_123456789');
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -45,12 +44,6 @@ function FormComponent({className} : {className?: string}) {
      
       function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
-        resend.sendEmail({
-          from: 'you@example.com',
-          to: 'user@gmail.com',
-          subject: 'hello world',
-          react: values,
-        });
       }
 
         return(
