@@ -19,6 +19,7 @@ function Gallery({className} : {className?: string}) {
     return ( 
     <section className={cn(className, 'bg-black  grid place-items-center gap-[5rem]  place-content-center grid-flow-row py-[5rem]  ')}>
       <Swiper
+      
       spaceBetween={0}
       slidesPerView={'auto'}
       effect={"fade"}
