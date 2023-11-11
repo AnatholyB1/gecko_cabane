@@ -36,7 +36,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`../assets/${size}/${menuType}.png`}
+                                    src={`/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />
@@ -45,7 +45,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`../assets/${size}/${menuType}.png`}
+                                    src={`/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />
@@ -54,7 +54,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`../assets/${size}/${menuType}.png`}
+                                    src={`/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />

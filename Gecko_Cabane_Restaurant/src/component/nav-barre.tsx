@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useMenu } from "@/Provider/MenuProvider";
 
-type Menu = './src/assets/menu/drink.png' | './src/assets/menu/special.png' | './src/assets/menu/menu.png'
+type Menu = '/menu/drink.png' | '/menu/special.png' | '/menu/menu.png'
 function NavBarre({className} : {className?: string}) {
     const MenuType = useMenu()
     const { setTheme } = useTheme()
-    const [menu, setMenu] = useState<Menu>(`./src/assets/menu/${MenuType.menuType}.png`)
+    const [menu, setMenu] = useState<Menu>(`/menu/${MenuType.menuType}.png`)
     
     return (
         <section className={cn(className,'')}>
@@ -65,13 +65,13 @@ function NavBarre({className} : {className?: string}) {
                                 </img>
                                 </Link>
                             </li>
-                            <Link onClick={() => ( MenuType.setMenuType('menu'))} onMouseEnter={() => {setMenu('./src/assets/menu/menu.png')}} to="/menu" title="Introduction" className="bg-transparent ">
+                            <Link onClick={() => ( MenuType.setMenuType('menu'))} onMouseEnter={() => {setMenu('/menu/menu.png')}} to="/menu" title="Introduction" className="bg-transparent ">
                                 Gecko Cabane Restaurant menu
                             </Link>
-                            <Link onClick={() => ( MenuType.setMenuType('special'))} onMouseEnter={() => setMenu('./src/assets/menu/special.png')} to="/menu" title="Installation" className="bg-transparent ">
+                            <Link onClick={() => ( MenuType.setMenuType('special'))} onMouseEnter={() => setMenu('/menu/special.png')} to="/menu" title="Installation" className="bg-transparent ">
                                 Gecko Cabane Restaurant special menu
                             </Link>
-                            <Link onClick={() => ( MenuType.setMenuType('drink'))} onMouseEnter={() => setMenu('./src/assets/menu/drink.png')} to="/menu" title="Typography" className="bg-transparent ">
+                            <Link onClick={() => ( MenuType.setMenuType('drink'))} onMouseEnter={() => setMenu('/menu/drink.png')} to="/menu" title="Typography" className="bg-transparent ">
                                 Gecko Cabane Restaurant wine menu
                             </Link>
                             </ul>
