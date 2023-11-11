@@ -5,12 +5,14 @@ import { Moon, ShoppingCart, Sun } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useMenu } from "@/Provider/MenuProvider";
 
-
+type Menu = '../src/assets/menu/drink.png' | '../src/assets/menu/special.png' | '../src/assets/menu/menu.png'
 function NavBarre({className} : {className?: string}) {
-
+    const MenuType = useMenu()
     const { setTheme } = useTheme()
-
+    const [menu, setMenu] = useState<Menu>(`../src/assets/menu/${MenuType.menuType}.png`)
     
     return (
         <section className={cn(className,'')}>
@@ -52,25 +54,25 @@ function NavBarre({className} : {className?: string}) {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                     <NavigationMenuTrigger className=" bg-transparent hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
-                        <NavigationMenuContent className={'bg-transparent'}>
+                        <NavigationMenuContent className={''}>
                             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                             <li className="row-span-3">
                                 <Link to="/menu">
                                 <img
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                   
+                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-1 no-underline outline-none focus:shadow-md"
+                                    src={menu}
                                 >
                                 </img>
                                 </Link>
                             </li>
-                            <Link to="/menu" title="Introduction" className="bg-transparent">
-                                Gecko Cabane Restaurant Menu
+                            <Link onClick={() => ( MenuType.setMenuType('menu'))} onMouseEnter={() => {setMenu('../src/assets/menu/menu.png')}} to="/menu" title="Introduction" className="bg-transparent ">
+                                Gecko Cabane Restaurant menu
                             </Link>
-                            <Link to="/menu" title="Installation" className="bg-transparent">
-                                Gecko Cabane Restaurant Special Menu
+                            <Link onClick={() => ( MenuType.setMenuType('special'))} onMouseEnter={() => setMenu('../src/assets/menu/special.png')} to="/menu" title="Installation" className="bg-transparent ">
+                                Gecko Cabane Restaurant special menu
                             </Link>
-                            <Link to="/menu" title="Typography" className="bg-transparent">
-                                Gecko Cabane Restaurant Wine Menu
+                            <Link onClick={() => ( MenuType.setMenuType('drink'))} onMouseEnter={() => setMenu('../src/assets/menu/drink.png')} to="/menu" title="Typography" className="bg-transparent ">
+                                Gecko Cabane Restaurant wine menu
                             </Link>
                             </ul>
                         </NavigationMenuContent>

@@ -15,7 +15,7 @@ function Card({className, orientation = 'right', img, title, subTitle, children}
                     {children} 
                 </div>  
                 <div className={`${orientation === 'right' ? 'row-end-auto lg:col-end-auto' : 'row-end-1 lg:col-end-1'} w-[310px] h-[310px] transition duration-300 delay-150 hover:scale-105`}>
-                    {img ? <div className=" bg-primary rounded-xl"><img title='card image' className=" rounded-xl -translate-x-2 -translate-y-2 " src={img} alt='oups' ></img></div> : <FontAwesomeIcon title="image placeholder" className="text-secondary w-full h-full" icon={faImage}></FontAwesomeIcon>}
+                    {img ? <div className=" bg-primary rounded-xl"><img title='card image' className="object-cover rounded-xl w-[310px] h-[310px] -translate-x-2 -translate-y-2 " src={img} alt='oups' ></img></div> : <FontAwesomeIcon title="image placeholder" className="text-secondary w-full h-full" icon={faImage}></FontAwesomeIcon>}
                 </div>              
             </section> );
 }

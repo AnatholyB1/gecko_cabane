@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 import { Menu, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { Link} from 'react-router-dom';
+import {useMenu} from "@/Provider/MenuProvider";
 
 function DropDownMain ({className} : {className?: string}) {
+    const menuType = useMenu()
     const { setTheme } = useTheme()
     return (
         <section className={cn(className, '')}>
@@ -23,10 +25,13 @@ function DropDownMain ({className} : {className?: string}) {
                             </DropdownMenuSubTrigger>
                             <DropdownMenuSubContent>
                                 <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer" >
-                                    Drink Menu
+                                    <Link to="/menu" onClick={() => menuType.setMenuType('menu')}>Food menu</Link> 
                                 </DropdownMenuItem>
                                 <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
-                                    Food Menu
+                                    <Link to="/menu" onClick={() => menuType.setMenuType('special')}>Special menu</Link> 
+                                </DropdownMenuItem>
+                                <DropdownMenuItem className="transform-all duration-300 hover:scale-105 hover:text-primary cursor-pointer">
+                                    <Link to="/menu" onClick={() => menuType.setMenuType('drink')}>Drink menu</Link> 
                                 </DropdownMenuItem>
                             </DropdownMenuSubContent>
                         </DropdownMenuSub>

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 export default function Header ({menu} : {menu : boolean}) {
     
     return (
-        <section className={`   ${!menu ?' flex  flex-col min-h-[25rem] md:min-h-[30rem] gap-6 md:gap-12 px-2' : 'fixed top-0 left-0 '}  w-screen `}>
+        <section className={`   ${!menu ?' flex  flex-col min-h-[25rem] md:min-h-[30rem] gap-6 md:gap-12 px-2' : 'fixed top-0 left-0 bg-white/90 z-10 '}  w-screen `}>
             {!menu && <div id='bg' className={'header-bg md:h-[30rem] min-h-[25rem]  w-full'}></div>}
             <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>

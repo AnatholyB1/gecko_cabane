@@ -6,11 +6,22 @@ import {
   } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 import { Link } from 'react-router-dom'
+import {Button} from "@/components/ui/button"
+import Food from "@/assets/food.json"
+import Glass from "@/assets/glass.json"
+import Star from "@/assets/star.json"
+import { Player} from "@lottiefiles/react-lottie-player";
+import { createRef } from "react"
+import { useMenu } from "@/Provider/MenuProvider"
 
 export default function Footer ({menu} : {menu : boolean}) {
+    const menuType = useMenu()
+    const star = createRef<Player>()
+    const food = createRef<Player>()
+    const glass = createRef<Player>()
     return (
-        <section className={`w-screen min-h-[10rem] ${!menu ?' bg-black text-white' : ' fixed bottom-0 left-0 text-black' }`}>
-            <div className="flex flex-col items-center items-align  align-center gap-4 px-5">
+        <section className={`${!menu ?' flex bg-black items-center flex-col align-center gap-4 px-5 text-white min-h-[10rem] w-screen ' : ' fixed bottom-[30px] left-1/2  h-[3em] text-black z-10 origin-center  -translate-x-1/2 ' }`}>
+            {!menu ? <div className="flex flex-col items-center items-align  align-center gap-4 px-5">
             <NavigationMenu className="h-auto w-auto ">
                 <NavigationMenuList >
                     <NavigationMenuItem>
@@ -40,8 +51,25 @@ export default function Footer ({menu} : {menu : boolean}) {
             </NavigationMenu>
             <span className=" flex-1 text-center  ">1 36-37 Soi Ruam Jit Tambon Pak Nam, Krabi Chang Wat Krabi 81000, TH | Phone: +66 81 958 5945 | <br /> Email: geckocabanerestaurant@gmail.com</span>
 
+            </div> :
+            <div className="w-[12em] h-full bg-white/80 flex flex-row rounded-full items-center justify-center gap-4 ">
+                <Button onClick={() => {star.current?.play(),menuType.setMenuType('special')}} title="Menu" variant={'ghost'} className=" p-0 w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/60 animation transform duration-600 delay-150 focus:scale-125 focus:bg-white">
+                <Player
+                    ref={star}
+                    autoplay={false}
+                    src={Star} /></Button>
+                <Button onClick={() => {food.current?.play(),menuType.setMenuType('menu')}} title="Menu" variant={'ghost'} className="p-0 w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/60 animation transform duration-300 delay-150 focus:scale-125 focus:bg-white" >
+                    <Player
+                     autoplay={false}
+                    ref={food}
+                    src={Food} /></Button>
+                <Button onClick={() =>{glass.current?.play(),menuType.setMenuType('drink')}} title="Menu" variant={'ghost'} className="p-0 w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/60 animation transform duration-300 delay-150 focus:scale-125 focus:bg-white">
+                <Player
+                    autoplay={false}
+                    ref={glass}
+                    src={Glass} /></Button>
             </div>
-            
+            }
         </section>
     )
 }

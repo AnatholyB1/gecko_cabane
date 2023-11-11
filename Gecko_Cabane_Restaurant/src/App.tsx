@@ -11,7 +11,7 @@ import NotFound from './page/404notfound.tsx'
 import Menu from './page/menu.tsx'
 import { ThemeProvider } from "@/components/theme-provider"
 import CGU from './page/cgu.tsx'
-
+import { MenuProvider } from './Provider/MenuProvider.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,7 +34,9 @@ function App() {
 
   return ( 
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <MenuProvider>
         <RouterProvider router={router}   />
+      </MenuProvider>
     </ThemeProvider>)
 }
 
