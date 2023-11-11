@@ -7,6 +7,7 @@ import 'swiper/css/effect-coverflow';
 import {useEffect,useState } from "react";
 import { useMenu } from "@/Provider/MenuProvider";
 
+
 type Menu = 'phone' | 'menu' 
 
 function Menu() {
@@ -35,7 +36,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`./src/assets/${size}/${menuType}.png`}
+                                    src={`../assets/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />
@@ -44,7 +45,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`./src/assets/${size}/${menuType}.png`}
+                                    src={`../assets/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />
@@ -53,7 +54,7 @@ function Menu() {
                                 <img
                                     alt="no menu"
                                     title="menu"
-                                    src={`./src/assets/${size}/${menuType}.png`}
+                                    src={`../assets/${size}/${menuType}.png`}
                                     loading="lazy"
                                     className="cursor-grab object-contain  bg-black w-screen h-screen"
                                 />
