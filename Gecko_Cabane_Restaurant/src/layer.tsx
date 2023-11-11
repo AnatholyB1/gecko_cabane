@@ -4,7 +4,7 @@ import { cn } from "./lib/utils";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Layer({children,className}: {children? :React.ReactNode, className ?: string}) {
+export default function Layer({children,className, menu = false}: {children? :React.ReactNode, className ?: string, menu ?: boolean}) {
     const nav = useNavigate()
     useEffect(() => {
         const cgu = localStorage.getItem('cgu')
@@ -16,9 +16,9 @@ export default function Layer({children,className}: {children? :React.ReactNode,
     },[localStorage.getItem('cgu')]   )
     return(
         <div className={cn(className,"grid drid-flow-row place-items-center w-screen h-screen overflow-y-auto overflow-x-hidden")}>
-            <Header/>
+            <Header menu={menu}/>
             {children}
-            <Footer/>
+            <Footer menu={menu}/>
         </div>
     )
 }

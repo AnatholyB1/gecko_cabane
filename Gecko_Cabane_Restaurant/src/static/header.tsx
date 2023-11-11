@@ -6,11 +6,11 @@ import DropDownMain from '@/component/header-dropdown'
 import { Link } from 'react-router-dom'
 
 
-export default function Header () {
+export default function Header ({menu} : {menu : boolean}) {
     
     return (
-        <section className="flex  flex-col w-screen   min-h-[25rem] md:min-h-[30rem]  gap-6 md:gap-12 px-2 ">
-            <div id='bg' className='header-bg md:h-[30rem] min-h-[25rem]  w-full'></div>
+        <section className={`   ${!menu ?' flex  flex-col min-h-[25rem] md:min-h-[30rem] gap-6 md:gap-12 px-2' : 'fixed top-0 left-0 '}  w-screen `}>
+            {!menu && <div id='bg' className={'header-bg md:h-[30rem] min-h-[25rem]  w-full'}></div>}
             <div className="flex w-full h-auto p-2 justify-between opacity-100 ">
                 <div>
                     <h1 className="transition-font-size hover:text-primary hover:cursor-pointer font-montserrat font-semibold leading-6 text-2xl md:text-xl transition-transform hover:scale-105 w-[10rem] md:w-auto" >
@@ -21,7 +21,7 @@ export default function Header () {
                 <NavBarre className="hidden  md:block"></NavBarre>
 
             </div>
-            <div className="flex flex-col p-4 w-full h-auto items-center align-center md:gap-4">
+            {!menu && <div className="flex flex-col p-4 w-full h-auto items-center align-center md:gap-4">
                 <div className="flex flex-col items-center align-center ">
                     <h3 className="mb-1 md:mb-5 text-black font-vidaloka text-2xl font-medium italic tracking-[1.4px] text-shadow text-center">explore new taste</h3>
                     <Separator></Separator>
@@ -34,7 +34,7 @@ export default function Header () {
                     <Button id="menu" title="link menu" className="rounded-full transition duration-300 hover:scale-110">
                         <Link to='/menu'>BROWSE MENU</Link></Button>
                 </div>
-            </div>
+            </div>}
         </section>
     )
 }

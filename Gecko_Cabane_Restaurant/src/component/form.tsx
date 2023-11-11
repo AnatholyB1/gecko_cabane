@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
+import Separator from "@/component/separator";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -47,14 +48,16 @@ function FormComponent({className} : {className?: string}) {
       }
 
         return(
-            <section className={cn( className, 'grid grid-flow-row     place-items-center  place-content-center text-center  md:text-start gap-5 py-[5rem] px-5 w-full h-full')}>
+            <section className={cn( className, 'grid grid-flow-row   place-items-center   text-center  md:text-start gap-5 py-[5rem] px-5 w-full h-full')}>
+                <h2 className="max-w-[500px] w-full h-auto transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl max-h-[40px]">CONTACT US</h2>
+                <Separator></Separator>
                     <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full h-full flex flex-col items-center justify-center max-w-[300px] ">
                     <FormField
                     control={form.control}
                     name="firstName"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem  className="w-full">
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
                             <Input placeholder="John" {...field} />
@@ -67,7 +70,7 @@ function FormComponent({className} : {className?: string}) {
                     control={form.control}
                     name="lastName"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem  className="w-full">
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
                             <Input placeholder="Doe" {...field} />
@@ -80,7 +83,7 @@ function FormComponent({className} : {className?: string}) {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem  className="w-full">
                         <FormLabel>Email</FormLabel>
                         <FormControl>
                             <Input type="email" placeholder="exemple@gmail.com" {...field} />
@@ -93,7 +96,7 @@ function FormComponent({className} : {className?: string}) {
                     control={form.control}
                     name="message"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem  className="w-full">
                         <FormLabel>Message</FormLabel>
                         <FormControl>
                             <Textarea placeholder="Your message..." {...field} />

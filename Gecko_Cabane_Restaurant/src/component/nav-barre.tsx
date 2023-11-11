@@ -6,6 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+
 function NavBarre({className} : {className?: string}) {
 
     const { setTheme } = useTheme()
@@ -51,10 +52,28 @@ function NavBarre({className} : {className?: string}) {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                     <NavigationMenuTrigger className=" bg-transparent hover:bg-transparent hover:text-primary">Menu</NavigationMenuTrigger>
-                    <NavigationMenuContent >
-                       
-                        
-                    </NavigationMenuContent>
+                        <NavigationMenuContent className={'bg-transparent'}>
+                            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                            <li className="row-span-3">
+                                <Link to="/menu">
+                                <img
+                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                   
+                                >
+                                </img>
+                                </Link>
+                            </li>
+                            <Link to="/menu" title="Introduction" className="bg-transparent">
+                                Gecko Cabane Restaurant Menu
+                            </Link>
+                            <Link to="/menu" title="Installation" className="bg-transparent">
+                                Gecko Cabane Restaurant Special Menu
+                            </Link>
+                            <Link to="/menu" title="Typography" className="bg-transparent">
+                                Gecko Cabane Restaurant Wine Menu
+                            </Link>
+                            </ul>
+                        </NavigationMenuContent>
                     </NavigationMenuItem>
                     <NavigationMenuItem className="overflow-visible" >
                     <NavigationMenuTrigger title="Shop"  className="transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>

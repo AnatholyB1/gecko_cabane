@@ -12,7 +12,7 @@ import Separator from "./separator";
 function Info ({className } : {className ?: string}) {
     return ( 
         <section className={cn( className, 'grid grid-flow-row  md:place-items-start   place-items-center  place-content-center text-center  md:text-start gap-5 py-[5rem] px-5 w-full h-full')}>
-            <h2 className="max-w-[500px] w-full h-auto transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl">CONTACT INFO</h2>
+            <h2 className="max-w-[500px]  w-full h-auto transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl">CONTACT INFO</h2>
             <Separator></Separator>
             <div className="grid grid-flow-row gap-2 w-auto h-auto max-w-[500px]">
                 <h5 className="secondary-title">ADDRESS​</h5>

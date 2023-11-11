@@ -15,8 +15,24 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true
-      }
-    })],
+      },
+      manifest: {
+        icons: [
+          {
+            src: '/android-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: '/favicon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+    }
+  })],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
