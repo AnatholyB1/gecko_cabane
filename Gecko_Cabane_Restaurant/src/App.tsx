@@ -12,6 +12,7 @@ import Menu from './page/menu.tsx'
 import { ThemeProvider } from "@/components/theme-provider"
 import CGU from './page/cgu.tsx'
 import { MenuProvider } from './Provider/MenuProvider.tsx'
+import { Toaster } from "@/components/ui/toaster"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +37,7 @@ function App() {
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <MenuProvider>
         <RouterProvider router={router}   />
+        <Toaster />
       </MenuProvider>
     </ThemeProvider>)
 }

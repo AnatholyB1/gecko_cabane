@@ -16,7 +16,7 @@ const app = express();	// Création de l'application express
 
 app.use(compression());	// Compression des requêtes 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://gecko-cabane.vercel.app'],
+    origin: true,
     credentials: true,
 }));	// Autorisation des requêtes cross-domain
 app.use(boydParser.json());	// Parser les requêtes en JSON
@@ -26,12 +26,7 @@ const server = http.createServer(app);	// Création du serveur HTTP
 
 
 const MONGO_URL = process.env.MONGO_CONNECT 	// Connexion à la base de données MongoDB
-
-
-
-
-
-
+console.log("MONGO_URL : " + MONGO_URL);
 
 
 server.listen(8080, () => {
