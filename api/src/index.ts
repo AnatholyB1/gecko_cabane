@@ -8,7 +8,8 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './router';
-
+import dotenv from 'dotenv';
+import path from 'path';
 
 
 
@@ -25,7 +26,12 @@ app.use(cookieParser());	// Parser les cookies
 const server = http.createServer(app);	// Création du serveur HTTP
 
 
-const MONGO_URL = process.env.MONGO_CONNECT 	// Connexion à la base de données MongoDB
+var MONGO_URL = process.env.MONGO_CONNECT 	// Connexion à la base de données MongoDB
+if (!MONGO_URL)
+{
+    dotenv.config({ path: path.join(__dirname, '../.env') });
+    MONGO_URL = process.env.MONGO_CONNECT;
+}
 console.log("MONGO_URL : " + MONGO_URL);
 
 

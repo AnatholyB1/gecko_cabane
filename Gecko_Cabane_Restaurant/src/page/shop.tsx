@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
+import {useCookies} from "react-cookie"
  
 const formSchema = z.object({
   email: z.string().min(1 , {message : "please enter an email"}).max(50).email({message : "please enter a valid email"}),
@@ -27,16 +28,13 @@ const formSchema = z.object({
 })
 
 
-
 export default function Shop() {
 
    
-
+    const [cookie, setCookie, removeCookie] = useCookies(['sessionToken']);
     return <Layer>
                 <section className="grid place-items-center grid-flow-row  bg-white py-[5rem] w-full h-auto " >
-                    <h1 className="text-primary text-center text-2xl font-bold leading-10 transition-font-size duration-300 md:text-4xl">SHOP IN CUSTOMISATION!</h1>
-                    <Lottie  className="w-full h-full max-w-[400px] max-h-[400px]" animationData={Icon}></Lottie>
-                    <Login></Login>
+                    {!cookie ? <Login></Login> : 'connected'}
                 </section>
            </Layer>
 }
@@ -46,6 +44,7 @@ export default function Shop() {
 function Login() {
     const { toast } = useToast()
     const [loading, setLoading] = useState(false)
+    const [cookie,setCookie] = useCookies(['sessionToken']);
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -57,17 +56,22 @@ function Login() {
 
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
-        const response = await fetch('https://100.20.92.101:8080/auth/login', {
+        const response = await fetch('https://gecko-api-mbde.onrender.com/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(values)
         });
-        form.reset()
-        response.json().then((data) => {
-            setLoading(false);
-            toast({title : 'You are now logged in 🎉', description : 'welcolme' + data.usermail});
+        form.reset();
+        setLoading(false);
+        response.status === 401 && toast({title : 'Your information are not right', description : 'Please try again'}) 
+        response.status === 502 && toast({title : 'Serveur error', description : 'Please contact the support'})
+        response.status === 408 && toast({title : 'Connection Problem', description : 'Please contact the support or check your connection'})
+        response.json().then((data : any) => {
+            response.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme'}) 
+            setCookie('sessionToken', data.authentification.sessionToken, {path : '/'})
+            toast({title : 'You are now logged in 🎉', description : 'welcolme' + data.name});
         });
     }
 

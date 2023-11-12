@@ -13,6 +13,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import CGU from './page/cgu.tsx'
 import { MenuProvider } from './Provider/MenuProvider.tsx'
 import { Toaster } from "@/components/ui/toaster"
+import { CookiesProvider } from 'react-cookie'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,13 +34,16 @@ const router = createBrowserRouter(
 
 function App() {
 
-  return ( 
+  return (
+    <CookiesProvider>
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <MenuProvider>
         <RouterProvider router={router}   />
         <Toaster />
       </MenuProvider>
-    </ThemeProvider>)
+    </ThemeProvider>
+    </CookiesProvider>
+  )
 }
 
 export default App
