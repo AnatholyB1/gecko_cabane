@@ -1,3 +1,5 @@
+console.log("node version : " + process.version);
+
 import express from 'express';
 import http from 'http';
 import boydParser from 'body-parser';
@@ -9,7 +11,7 @@ import router from './router';
 import dotenv from 'dotenv';
 import path from 'path';
 
-console.log("node version : " + process.version);
+
 
 
 const app = express();	// Création de l'application express
