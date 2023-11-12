@@ -9,6 +9,8 @@ import router from './router';
 import dotenv from 'dotenv';
 import path from 'path';
 
+console.log("node version : " + process.version);
+
 
 const app = express();	// Création de l'application express
 
@@ -38,7 +40,7 @@ server.listen(8080, () => {
 
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL ?? '');
+if (MONGO_URL) mongoose.connect(MONGO_URL);
 mongoose.connection.on('error', err => {
     console.error(`MongoDB connection error: ${err}`);
     process.exit(1);
