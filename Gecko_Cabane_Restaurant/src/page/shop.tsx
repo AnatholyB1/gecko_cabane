@@ -1,7 +1,4 @@
 import Layer from "@/layer"
-import Lottie   from "lottie-react"
-import Icon from '@/assets/wired-outline-298-coins.json'
-
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -31,10 +28,10 @@ const formSchema = z.object({
 export default function Shop() {
 
    
-    const [cookie, setCookie, removeCookie] = useCookies(['sessionToken']);
+    const [cookie] = useCookies(['sessionToken']);
     return <Layer>
                 <section className="grid place-items-center grid-flow-row  bg-white py-[5rem] w-full h-auto " >
-                    {!cookie ? <Login></Login> : 'connected'}
+                    {!cookie.sessionToken ? <Login></Login> : 'connected'}
                 </section>
            </Layer>
 }
@@ -53,7 +50,7 @@ function Login() {
         },
       })
     
-
+    cookie
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
         const response = await fetch('https://gecko-api-mbde.onrender.com/auth/login', {
