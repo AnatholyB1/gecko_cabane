@@ -5,7 +5,7 @@ import Layer from "@/layer"
 
 export default function Contact() {
     return <Layer>
-                <section className="grid place-items-center grid-flow-row xl:grid-flow-col  bg-white py-[5rem] w-full h-auto " >
+                <section className="grid place-items-center grid-flow-row xl:grid-flow-col   py-[5rem] w-full h-auto " >
                     <Info ></Info>
                     <FormComponent ></FormComponent>
                 </section>

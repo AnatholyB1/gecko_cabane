@@ -37,8 +37,8 @@ function CGU() {
     return (
         <div className="relative overflow-x-hidden ">
         <Layer className={`${focus  && 'blur'} overflow-x-hidden`}>
-            <section className={`grid w-full grid-flow-row place-items-center gap-4 h-auto py-[5rem]  px-5 text-center home-info-p ${bg ? 'bg-white w-full' : '' }`}>
-                <div className={` overflow-y-auto grid grid-flow-row  max-h-[600px] place-items-center rounded-xl gap-4 h-auto ${bg ? 'bg-white w-full' : 'bg-white/90 '}  py-[5rem] px-5 text-center home-info-p `}>
+            <section className={`grid w-full grid-flow-row place-items-center gap-4 h-auto py-[5rem]  px-5 text-center home-info-p ${bg ? ' w-full' : '' }`}>
+                <div className={` overflow-y-auto grid grid-flow-row  max-h-[600px] place-items-center rounded-xl gap-4 h-auto ${bg ? ' w-full' : '/90 '}  py-[5rem] px-5 text-center home-info-p `}>
                     <h2>Terms and Conditions of Site Use</h2>
                     <p>This site is intended for personal, non-commercial use.</p>
                     <p>Any reproduction, modification, distribution, or commercial use without prior authorization is strictly prohibited.</p>
@@ -58,7 +58,7 @@ function CGU() {
                     <CardTitle>General Condition of Use</CardTitle> 
                     <CardDescription>Little bit of reading</CardDescription>
                 </CardHeader>
-                <CardContent className="grid  grid-flow-row h-auto min-w-[300px] max-w-[80%] mg:min-w-[700px] max-h-[400px]  bg-white py-[5rem] px-5 text-center overflow-y-auto sm:overflow-hidden ">
+                <CardContent className="grid  grid-flow-row h-auto min-w-[300px] max-w-[80%] mg:min-w-[700px] max-h-[400px]   py-[5rem] px-5 text-center overflow-y-auto sm:overflow-hidden ">
                     <h2>Terms and Conditions of Site Use</h2>
                     <p>This site is intended for personal, non-commercial use.</p>
                     <p>Any reproduction, modification, distribution, or commercial use without prior authorization is strictly prohibited.</p>

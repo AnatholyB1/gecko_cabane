@@ -20,7 +20,7 @@ export default function Footer ({menu} : {menu : boolean}) {
     const food = createRef<Player>()
     const glass = createRef<Player>()
     return (
-        <section className={`${!menu ?' flex bg-black items-center flex-col align-center gap-4 px-5 text-white min-h-[10rem] w-screen ' : ' fixed bottom-[30px] left-1/2  h-[3em] text-black z-10 origin-center  -translate-x-1/2 ' }`}>
+        <section className={`${!menu ?' flex bg-footer items-center flex-col align-center gap-4 px-5  min-h-[10rem] w-screen ' : ' fixed bottom-[30px] left-1/2  h-[3em] text-black z-10 origin-center  -translate-x-1/2 ' }`}>
             {!menu ? <div className="flex flex-col items-center items-align  align-center gap-4 px-5">
             <NavigationMenu className="h-auto w-auto ">
                 <NavigationMenuList >
@@ -52,7 +52,7 @@ export default function Footer ({menu} : {menu : boolean}) {
             <span className=" flex-1 text-center  ">1 36-37 Soi Ruam Jit Tambon Pak Nam, Krabi Chang Wat Krabi 81000, TH | Phone: +66 81 958 5945 | <br /> Email: geckocabanerestaurant@gmail.com</span>
 
             </div> :
-            <div className="w-[12em] h-full bg-white/80 flex flex-row rounded-full items-center justify-center gap-4 ">
+            <div className="w-[12em] h-full bg-background flex flex-row rounded-full items-center justify-center gap-4 ">
                 <Button onClick={() => {star.current?.play(),menuType.setMenuType('special')}} title="Menu" variant={'ghost'} className=" p-0 w-[30px] h-[30px] rounded-full flex items-center justify-center bg-white/60 animation transform duration-600 delay-150 focus:scale-125 focus:bg-white">
                 <Player
                     ref={star}

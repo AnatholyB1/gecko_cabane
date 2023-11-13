@@ -17,9 +17,8 @@ import 'swiper/css/effect-coverflow';
 
 function Gallery({className} : {className?: string}) {
     return ( 
-    <section className={cn(className, 'bg-black  grid place-items-center gap-[5rem]  place-content-center grid-flow-row py-[5rem]  ')}>
+    <section className={cn(className, 'grid place-items-center gap-[5rem]  place-content-center grid-flow-row py-[5rem]  ')}>
       <Swiper
-      
       spaceBetween={0}
       slidesPerView={'auto'}
       effect={"fade"}
@@ -29,7 +28,7 @@ function Gallery({className} : {className?: string}) {
       pagination={{ clickable: true, type: 'bullets' }}
       scrollbar={{ draggable: true }}
 
-       className="w-[300px] h-full ">
+       className="w-[300px] h-full">
         <SwiperSlide >
           <img alt="oups" className="h-[10rem] w-[14rem]  rounded-md transiton duration-300 delay-150  hover:scale-110" src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>

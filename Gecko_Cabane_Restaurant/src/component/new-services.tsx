@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function NewServices({className} : {className?: string}) {
     const nav = useNavigate()
     return ( 
-        <section className={cn(className,'grid place-items-center gap-[5rem]  place-content-center grid-flow-row py-[5rem] bg-white')}>
+        <section className={cn(className,'grid place-items-center gap-[5rem]  place-content-center grid-flow-row py-[5rem] ')}>
             <div className="col-span-2 flex flex-col gap-4 items-center">
                     <h2 className="transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl">NEW SERVICES & UPCOMING EVENTS</h2>
                     <Separator></Separator>

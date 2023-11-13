@@ -23,6 +23,7 @@ module.exports = {
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
       colors: {
+        bg: "hsl(var(--bg))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

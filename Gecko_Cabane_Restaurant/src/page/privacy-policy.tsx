@@ -3,7 +3,7 @@ import Layer from "@/layer";
 function Privacypolicy() {
     return (
         <Layer>
-            <section className="grid  grid-flow-row w-full h-auto bg-white py-[5rem] px-5">
+            <section className="grid  grid-flow-row w-full h-auto  py-[5rem] px-5">
                 <p className="text-center home-info-p">Welcome to our privacy policy page.</p>
                 <p className="text-center home-info-p">We take the protection of your personal data very seriously. This privacy policy explains how we collect, use, and protect your information when you use our website.</p>
                 <p className="text-center home-info-p">Collection and Use of Information</p>

@@ -12,7 +12,7 @@ export default function Home () {
     
         <Layer>
             <section className="grid  grid-flow-row w-full h-auto">
-                <Lietmotive  className="py-4"></Lietmotive>
+                <Lietmotive  className="py-4 "></Lietmotive>
                 <HomeInfo  className=" py-4"></HomeInfo>
                 <NewServices  className=" py-4"></NewServices>
                 <Comment  className=" py-4"></Comment>

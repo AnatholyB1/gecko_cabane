@@ -14,11 +14,13 @@ const MenuContext = createContext<MenuContextProps>({
 
 export const useMenu = () => useContext(MenuContext);
 
-export const MenuProvider = ({children} : {children :any}) => {
+interface MenuProviderProps extends React.HTMLAttributes<HTMLDivElement> {  children: React.ReactNode}
+
+export const MenuProvider = ({children ,...props}: MenuProviderProps)  => {
   const [menuType, setMenuType] = useState<MenuType>('menu');
 
   return (
-    <MenuContext.Provider value={{ menuType, setMenuType }}>
+    <MenuContext.Provider {...props} value={{ menuType, setMenuType }}>
       {children}
     </MenuContext.Provider>
   );

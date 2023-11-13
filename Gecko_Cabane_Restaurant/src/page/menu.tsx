@@ -38,7 +38,7 @@ function Menu() {
                                     title="menu"
                                     src={`/${size}/${menuType}.png`}
                                     loading="lazy"
-                                    className="cursor-grab object-contain  bg-black w-screen h-screen"
+                                    className="cursor-grab object-contain   w-screen h-screen"
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
@@ -47,7 +47,7 @@ function Menu() {
                                     title="menu"
                                     src={`/${size}/${menuType}.png`}
                                     loading="lazy"
-                                    className="cursor-grab object-contain  bg-black w-screen h-screen"
+                                    className="cursor-grab object-contain   w-screen h-screen"
                                 />
                             </SwiperSlide>
                             <SwiperSlide>
@@ -56,7 +56,7 @@ function Menu() {
                                     title="menu"
                                     src={`/${size}/${menuType}.png`}
                                     loading="lazy"
-                                    className="cursor-grab object-contain  bg-black w-screen h-screen"
+                                    className="cursor-grab object-contain   w-screen h-screen"
                                 />
                             </SwiperSlide>
                         </Swiper>

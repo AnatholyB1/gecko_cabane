@@ -7,7 +7,7 @@ import {faImage} from '@fortawesome/free-regular-svg-icons'
 type Orientation = 'left' | 'right'
 
 function Card({className, orientation = 'right', img, title, subTitle, children} : {className?: string, orientation?: Orientation, img?: string,title: string,subTitle?: string, children?:React.ReactNode}) {
-    return ( <section className={cn(className, 'grid place-items-center  gap-8 place-content-center grid-flow-row lg:grid-flow-col px-[2rem] py-[5rem] bg-white w-full') }>
+    return ( <section className={cn(className, 'grid place-items-center  gap-8 place-content-center grid-flow-row lg:grid-flow-col px-[2rem] py-[5rem]  w-full') }>
                 <div className="lg:col-span-2 grid grid-flow-row place-content-center justify-items-center lg:justify-items-start  lg:place-content-start gap-[2rem] lg:text-start text-center lg:max-w-[800px] lg:max-h-[310px]">
                     <h2 className=" transition-font-size home-info-title text-xl md:text-4xl">{title}</h2>
                     <Separator></Separator>

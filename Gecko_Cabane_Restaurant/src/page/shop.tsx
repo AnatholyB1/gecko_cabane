@@ -30,7 +30,7 @@ export default function Shop() {
    
     const [cookie] = useCookies(['sessionToken']);
     return <Layer>
-                <section className="grid place-items-center grid-flow-row  bg-white py-[5rem] w-full h-auto " >
+                <section className="grid place-items-center grid-flow-row   py-[5rem] w-full h-auto " >
                     {!cookie.sessionToken ? <Login></Login> : 'connected'}
                 </section>
            </Layer>
