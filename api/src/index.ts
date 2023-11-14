@@ -32,7 +32,7 @@ if (!MONGO_URL)
     dotenv.config({ path: path.join(__dirname, '../.env') });
     MONGO_URL = process.env.MONGO_CONNECT;
 }
-console.log("MONGO_URL : " + MONGO_URL);
+
 
 
 server.listen(8080, () => {

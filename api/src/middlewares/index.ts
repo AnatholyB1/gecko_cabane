@@ -44,3 +44,20 @@ export const isOwner = (req: express.Request, res: express.Response, next: expre
         return res.sendStatus(400);
     }
 }
+
+
+export const isValidEmail = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const {firstName, lastName, email, message} = req.body;
+    const regex = /\S+@\S+\.\S+/;
+    try{
+        const response = regex.test(email)
+        if(response === false){
+            return res.send('Email is not valid');
+        }
+        return next();
+    } catch(err){
+        console.error(err);
+        return res.sendStatus(400);
+    }
+
+}
