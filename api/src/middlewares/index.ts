@@ -47,7 +47,7 @@ export const isOwner = (req: express.Request, res: express.Response, next: expre
 
 
 export const isValidEmail = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    const {firstName, lastName, email, message} = req.body;
+    const { email} = req.body;
     const regex = /\S+@\S+\.\S+/;
     try{
         const response = regex.test(email)
