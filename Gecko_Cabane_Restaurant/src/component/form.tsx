@@ -14,6 +14,12 @@ import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import Separator from "@/component/separator";
+import axios from "axios";
+import { useState } from "react";
+import { Player } from "@lottiefiles/react-lottie-player";
+import sending from "../assets/sending.json"
+import success from "../assets/succes.json"
+import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -32,7 +38,8 @@ const formSchema = z.object({
 
 
 function FormComponent({className} : {className?: string}) {
-
+    const {toast} = useToast()
+    const [loading, setLoading] = useState(false)
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -44,14 +51,28 @@ function FormComponent({className} : {className?: string}) {
       })
      
       function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
-      }
+        setLoading(true);
+          axios.post("https://gecko-api-mbde.onrender.com/email/send", values)
+            .then(() => {
+              toast({title: "Message sent ", description: "We will contact you as soon as possible " + values.firstName, action :<Player className="w-10 h-10 fill-animate" autoplay={true} src={success}/>});
+              setLoading(false);
+            })
+            .catch(error => {
+              console.error(error);
+              toast({variant: "destructive",title: "Error", description: "An error occured, please try again later"})
+            })
+            .finally(() => {
+              
+            });
+        }
+        
+      
 
         return(
             <section className={cn( className, 'grid grid-flow-row   place-items-center   text-center  md:text-start gap-5 py-[5rem] px-5 w-full h-full')}>
                 <h2 className="max-w-[500px] w-full h-auto transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl max-h-[40px]">CONTACT US</h2>
                 <Separator></Separator>
-                    <Form {...form}>
+                    { !loading ?<Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full h-full flex flex-col items-center justify-center max-w-[300px] ">
                     <FormField
                     control={form.control}
@@ -107,7 +128,7 @@ function FormComponent({className} : {className?: string}) {
                     />
                     <Button id="submit" type="submit">Submit</Button>
                 </form>
-                </Form>
+                </Form> : <Player autoplay={true} className="fill-animate"  loop src={sending}></Player>}
             </section>
         )
     

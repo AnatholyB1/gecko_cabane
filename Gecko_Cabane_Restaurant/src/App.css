@@ -53,6 +53,7 @@
     --gradient: linear-gradient(120deg, #000000 0%, #808080 70%, #96e6a1 100%);
     --footer: 0 0% 100%;
     --text : #ffffff;
+    --animate: #ffffff;
 
   }
 }
