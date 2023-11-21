@@ -22,6 +22,7 @@ app.use(cors({
 }));	// Autorisation des requêtes cross-domain
 app.use(boydParser.json());	// Parser les requêtes en JSON
 app.use(cookieParser());	// Parser les cookies
+app.use('/public' ,express.static(path.join(__dirname, '../public')));	// Définition du dossier public
 
 const server = http.createServer(app);	// Création du serveur HTTP
 

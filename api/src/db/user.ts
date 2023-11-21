@@ -11,6 +11,10 @@ const UserSchema = new mongoose.Schema({
         salt: { type: String, select: false },
         sessionToken: { type: String, select: false },
     },
+    admin: {
+        type: Boolean,
+        required: false,
+    },
 });
 
 // Création du modèle User

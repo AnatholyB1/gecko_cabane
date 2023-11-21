@@ -61,3 +61,24 @@ export const isValidEmail = (req: express.Request, res: express.Response, next: 
     }
 
 }
+
+export const isAdmin = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    try{
+        const sessionToken = req.cookies['sessionToken']
+        if(!sessionToken){
+            return res.sendStatus(403);
+        }
+        const user = await getUserBySessionToken(sessionToken);
+        if(!user){
+            return res.sendStatus(401);
+        }
+        if (user.admin != true) {
+            return res.sendStatus(401);
+        }
+        merge(req, {identity :user});
+        return next();
+    } catch(err){
+        console.error(err);
+        return res.sendStatus(400);
+    }
+}

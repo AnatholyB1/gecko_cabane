@@ -1,7 +1,7 @@
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider"
-import { Moon, ShoppingCart, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -76,12 +76,6 @@ function NavBarre({className} : {className?: string}) {
                             </Link>
                             </ul>
                         </NavigationMenuContent>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem className="overflow-visible" >
-                    <NavigationMenuTrigger title="Shop"  className="transition-transform hover:scale-105 w-auto h-auto bg-transparant hover:text-primary hover:bg-transparant aria-expended:text-primary  aria-expended:bg-transparant focus:text-primary focus:bg-transparant data-[state=open]:bg-transparant  flex flex-col"><ShoppingCart className=" w-4 h-4 stroke-2 z-1 bg-transparent  "/></NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <Link  className={cn(navigationMenuTriggerStyle(),'bg-transparent  cursor-pointer hover:bg-transparent hover:text-primary transition-transform hover:scale-105')} to="/shop">Shop</Link>
-                    </NavigationMenuContent>
                     </NavigationMenuItem>
                 </NavigationMenuList>
                 </NavigationMenu>

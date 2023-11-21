@@ -21,13 +21,16 @@
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
+    --border: 240 5.9% 80%;
     --input: #FFFFFF;
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.5rem;
     --gradient: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
     --footer: 240 5.9% 90%;
     --text : #000000;
+    --admin : #eceaea;
+    --main-icon-admin : 74 222 128;
+
   }
  
   .dark {
@@ -54,6 +57,8 @@
     --footer: 0 0% 100%;
     --text : #ffffff;
     --animate: #ffffff;
+    --admin : #38383b;
+    --main-icon-admin : 74 222 128;
 
   }
 }
@@ -193,3 +198,7 @@ Boutton{
 }
 
 
+.swiper-slide{
+  width: auto !important;
+  padding: 2rem;
+}

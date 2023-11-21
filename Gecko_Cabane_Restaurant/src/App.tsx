@@ -14,6 +14,8 @@ import CGU from './page/cgu.tsx'
 import { MenuProvider } from './Provider/MenuProvider.tsx'
 import { Toaster } from "@/components/ui/toaster"
 import { CookiesProvider } from 'react-cookie'
+import Admin from './page/admin.tsx'
+import { AdminProvider } from './Provider/admin-provider.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,7 @@ const router = createBrowserRouter(
         <Route path='not-found' element={<NotFound/>} ></Route>
         <Route path='*' element={<NotFound/>} ></Route>
         <Route path='menu' element={<Menu/>} ></Route>
+        <Route path='admin' element={<Admin/>} ></Route>
     </Route>
   )
 )
@@ -38,7 +41,9 @@ function App() {
     <CookiesProvider>
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <MenuProvider>
-        <RouterProvider router={router}   />
+        <AdminProvider>
+          <RouterProvider router={router}   />
+        </AdminProvider>
         <Toaster />
       </MenuProvider>
     </ThemeProvider>

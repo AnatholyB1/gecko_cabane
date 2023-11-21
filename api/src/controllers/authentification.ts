@@ -1,6 +1,6 @@
 import express from 'express';
 import { getUserByEmail, createUser } from '../db/user';
-import {random, authentification} from '../helpers';
+import {random, authentification} from '../helpers/auth';
 
 //create a login function with errors handling 
 export const login = async (req: express.Request, res: express.Response) => {
@@ -35,7 +35,6 @@ export const register = async (req: express.Request, res: express.Response) => {
     try{
         const{ name, email, password } = req.body;
         if(!name || !email || !password){
-            console.log(name, email, password);
             return res.sendStatus(400);
         }
 
