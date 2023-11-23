@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUserByEmail, createUser } from '../db/user';
+import { getUserByEmail, createUser, getUserBySessionToken } from '../db/user';
 import {random, authentification} from '../helpers/auth';
 
 //create a login function with errors handling 
@@ -55,6 +55,65 @@ export const register = async (req: express.Request, res: express.Response) => {
                     
         });
         return res.status(200).json(user).end();
+    } catch(err){
+        console.error(err);
+        return res.sendStatus(400);
+    }
+}
+
+export const isLogged = async (req: express.Request, res: express.Response) => {
+    try{
+        const sessionToken = req.cookies['sessionToken'];
+        if(!sessionToken){
+            return res.sendStatus(403);
+        }
+        const user = await getUserBySessionToken(sessionToken);
+        if(!user){
+            return res.sendStatus(403);
+        }
+        return res.status(200).json(user).end();
+    } catch(err){
+        console.error(err);
+        return res.sendStatus(400);
+    }
+}
+
+
+export const refreshSessionToken = async (req: express.Request, res: express.Response) => {
+    try{
+        const sessionToken = req.cookies['sessionToken'];
+        if(!sessionToken){
+            return res.sendStatus(403);
+        }
+        const user = await getUserBySessionToken(sessionToken);
+        if(!user){
+            return res.sendStatus(403);
+        }
+        const salt = random();
+        user.authentification!.sessionToken = authentification(salt, user._id.toString());
+        await user.save();
+        res.cookie('sessionToken', user.authentification!.sessionToken, { httpOnly: true });
+        return res.status(200).json(user).end();
+    } catch(err){
+        console.error(err);
+        return res.sendStatus(400);
+    }
+}
+
+export const logout = async (req: express.Request, res: express.Response) => {
+    try{
+        const sessionToken = req.cookies['sessionToken'];
+        if(!sessionToken){
+            return res.sendStatus(403);
+        }
+        const user = await getUserBySessionToken(sessionToken);
+        if(!user){
+            return res.sendStatus(403);
+        }
+        user.authentification!.sessionToken = '';
+        await user.save();
+        res.clearCookie('sessionToken');
+        return res.sendStatus(200);
     } catch(err){
         console.error(err);
         return res.sendStatus(400);

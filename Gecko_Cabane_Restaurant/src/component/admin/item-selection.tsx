@@ -17,6 +17,12 @@ import {useToast} from "@/components/ui/use-toast";
 import { Player } from "@lottiefiles/react-lottie-player";
 import success from "@/assets/succes.json";
 import { Loader2 } from "lucide-react";
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuList,
+  } from "@/components/ui/navigation-menu"
+
 
 
 // Définir le schéma du formulaire
@@ -44,6 +50,7 @@ function ItemSelection({...props} : ItemSelectionProps) {
     const [item, setItem] = useState<ItemSideBarSubType>()
     const {toast} = useToast()  
     const [loading, setLoading] = useState(false)
+    const [ page , setPage] = useState< 'add' | 'preview' | 'update'>('add');
     const { setValue, handleSubmit, reset } = useForm( { 
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -136,7 +143,7 @@ function ItemSelection({...props} : ItemSelectionProps) {
                 </div>
                 :
                 <form className="flex flex-col gap-2 md:p-5 p-2" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="md:p-2 p-1   shadow-md rounded-md flex items-center justify-between"><h5 >{item?.name }</h5><Button type="submit">Save</Button></div>
+                    <div className="md:p-2 p-1   shadow-md rounded-md flex items-center justify-between"><h5 >{item?.name }</h5><Button >Save</Button></div>
                     
                         {
                             loading ?
@@ -145,10 +152,39 @@ function ItemSelection({...props} : ItemSelectionProps) {
                             </div>
 
                             :
-                            <div className="grid grid-flow-dense grid-cols-1 place-items-center md:grid-cols-3 md:grid-rows-auto  md:place-items-start gap-2">
-                                <Preview disabled={item?.name.includes('Assets')}  api={item?.api!} onDelete={(e) => setValue('preview', e)} className="p-2 md:col-span-2"></Preview>
-                                <Add type={item?.api!} onAdd={(e) => setValue('add', e)} className="p-2 md:col-span-1 md:row-span-2 md:place-self-center" ></Add>
-                                <Update disabled={item?.name.includes('Assets')}  api={item?.api!} onUpdate={(e) => setValue('update',e)} className="p-2 md:col-span-2" ></Update>
+                            <div className="relative flex-grow">
+                                    <NavigationMenu className="py-2">
+                                        <NavigationMenuList>
+                                            <NavigationMenuItem>
+                                                <Button  variant={page == 'add' ? 'default'  : 'ghost' } type='button' onClick={() => setPage('add')}>Add</Button>
+                                            </NavigationMenuItem>
+                                            <NavigationMenuItem>
+                                                <Button variant={page == 'preview' ? 'default'  : 'ghost' }  type='button' onClick={() => setPage('preview')}>View and Delete</Button>
+                                            </NavigationMenuItem>
+                                            <NavigationMenuItem>
+                                                <Button variant={page == 'update' ? 'default'  : 'ghost' }  type='button' onClick={() => setPage('update')}>Update</Button>
+                                            </NavigationMenuItem>
+                                        </NavigationMenuList>
+                                    </NavigationMenu>
+                                    {page && (() => {
+                                        switch (page)
+                                        {
+                                            case 'add':
+                                                return(
+
+                                                    <Add type={item?.api!} onAdd={(e) => setValue('add', e)} className="p-2 flex-grow" ></Add>
+                                                )
+                                            case 'preview':
+                                                return(
+                                                    <Preview disabled={item?.name.includes('Assets')}  api={item?.api!} onDelete={(e) => setValue('preview', e)} className="p-2 flex-grow"></Preview>
+                                               )
+                                            case 'update':
+                                                return(
+                                                    <Update disabled={item?.name.includes('Assets')}  api={item?.api!} onUpdate={(e) => setValue('update',e)} className="p-2 flex-grow" ></Update>
+                                                )
+                                        }})()
+            
+                                    }      
                             </div>
                             
                         }       
