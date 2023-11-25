@@ -48,11 +48,11 @@ export default function Login() {
         });
         form.reset();
         setLoading(false);
-        response.status === 401 && toast({title : 'Your information are not right', description : 'Please try again'}) 
+        response.status === 401 && toast({title : 'Your information are not right', description : 'Please try again'})
+        response.status === 403 && toast({title : "Oh seems you're not authorized to be there", description : 'see you soon'}) 
         response.status === 502 && toast({title : 'Serveur error', description : 'Please contact the support'})
         response.status === 408 && toast({title : 'Connection Problem', description : 'Please contact the support or check your connection'})
         response.json().then((data : any) => {
-            response.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme'}) 
             setCookie('sessionToken', data.authentification.sessionToken, {path : '/'})
             toast({title : 'You are now logged in 🎉', description : 'welcolme' + data.name});
         });

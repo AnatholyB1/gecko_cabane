@@ -66,6 +66,7 @@ export const isAdmin = async (req: express.Request, res: express.Response, next:
     try{
         const sessionToken = req.cookies['sessionToken']
         if(!sessionToken){
+            console.log('no sessionToken')
             return res.sendStatus(403);
         }
         const user = await getUserBySessionToken(sessionToken);
@@ -73,7 +74,7 @@ export const isAdmin = async (req: express.Request, res: express.Response, next:
             return res.sendStatus(401);
         }
         if (user.admin != true) {
-            return res.sendStatus(401);
+            return res.sendStatus(403);
         }
         merge(req, {identity :user});
         return next();
