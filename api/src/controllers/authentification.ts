@@ -23,7 +23,7 @@ export const login = async (req: express.Request, res: express.Response) => {
 
         await user.save();
 
-        res.cookie('sessionToken', user.authentification.sessionToken, { httpOnly: true });
+        res.cookie('sessionToken', user.authentification.sessionToken,  { httpOnly: true, sameSite: 'none', secure: true, });
         return res.status(200).json(user).end();
     } catch(err){
         console.error(err);
