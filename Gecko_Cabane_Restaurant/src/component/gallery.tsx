@@ -66,6 +66,7 @@ function Gallery({className} : {className?: string}) {
 
       slidesPerView={'auto'}
       effect={"fade"}
+      spaceBetween={30}
       centeredSlides={true}
       navigation
       loop={true}

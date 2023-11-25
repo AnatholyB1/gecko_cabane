@@ -22,8 +22,8 @@ function Menu() {
                 <section className="grid bg-transparent place-items-center grid-flow-row   h-[100vh-10rem] w-full  " >
                         
                         <Swiper
+                        
                             className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-screen h-screen"
-                            spaceBetween={0}
                             slidesPerView={1}
                             effect={"fade"}
                             centeredSlides={true}
@@ -32,7 +32,7 @@ function Menu() {
                             pagination={{ clickable: true, type: 'bullets' }}
                             scrollbar={{ draggable: true }}
                         >
-                            <SwiperSlide >
+                            <SwiperSlide  >
                                 <img
                                     alt="no menu"
                                     title="menu"
