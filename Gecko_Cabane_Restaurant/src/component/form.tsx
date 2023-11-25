@@ -71,6 +71,7 @@ function FormComponent({className} : {className?: string}) {
         return(
             <section className={cn( className, 'grid grid-flow-row   place-items-center   text-center  md:text-start gap-5 py-[5rem] px-5 w-full h-full')}>
                 <h2 className="max-w-[500px] w-full h-auto transition-font-size home-info-title text-center md:w-[50rem] px-5 text-xl md:text-4xl max-h-[40px]">CONTACT US</h2>
+                <p className="text-muted-foreground italic">reservation only by phone</p>
                 <Separator></Separator>
                     { !loading ?<Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full h-full flex flex-col items-center justify-center max-w-[300px] ">
