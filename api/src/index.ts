@@ -17,9 +17,9 @@ const app = express();	// Création de l'application express
 
 app.use(compression());	// Compression des requêtes 
 app.use(cors({
-    origin: true,
-    credentials: true,
-}));	// Autorisation des requêtes cross-domain
+    origin: ['http://localhost:5173', 'https://gecko-cabane.vercel.app'],  // Remplacez ceci par l'URL de votre application cliente
+    credentials: true, // Cela permet d'accepter les cookies
+  }));
 app.use(boydParser.json());	// Parser les requêtes en JSON
 app.use(cookieParser());	// Parser les cookies
 app.use('/public' ,express.static(path.join(__dirname, '../public')));	// Définition du dossier public

@@ -42,6 +42,26 @@ function Admin() {
                         }
                     }
                     break;
+                case 403 :
+                    try{
+                        const response = await axios.get('https://gecko-api-mbde.onrender.com/auth/refreshtoken', { withCredentials: true })
+                        setCookie('sessionToken', response.data.authentification.sessionToken, {path : '/'})
+                        response.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme' + response.data.name});
+                        setLoading(false)
+                    }catch(error : any) {
+                        switch(error.response.status) {
+                            case 403 :
+                                toast({title : 'You are not logged in or dosent have the rights', description : 'Please try login later'})
+                                setLoading(false)
+                                break;
+                            case 400 :
+                                toast({title : 'There is a problem on server side', description : 'Please try again later'})
+                                setLoading(false)
+                                break;
+                        }
+                    }
+                    break;
+
                 case 400 :
                     toast({title : 'There is a problem on server side', description : 'Please try again later'})
                     setLoading(false)
