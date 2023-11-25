@@ -12,7 +12,7 @@ const containerStyle = {
 
 
 const center   = {
-  lat: 8.06164275698826,
+  lat: 8.06144275698826,
   lng: 98.91564013693201
 };
 
