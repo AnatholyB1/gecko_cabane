@@ -97,12 +97,12 @@ export default function Footer ({menu} : {menu : boolean}) {
                         </p>
                     </div>
                 </div>
-                <div className="md:hidden fixed bottom-0 z-50 p-2 grid grid-flow-col  bg-black w-screen place-items-center rounded-tl-2xl rounded-tr-2xl ">
+                <div className="md:hidden fixed bottom-0 z-50 p-3 grid grid-flow-col  bg-black w-screen place-items-center rounded-tl-2xl rounded-tr-2xl ">
                     
-                    <Link to="/about" ><FontAwesomeIcon  className="w-6 h-6 " icon={faQuestion} /> </Link>
-                    <Link to="/" > <FontAwesomeIcon   className="w-6 h-6  "  icon={faHouse} /></Link>
-                    <Link to="/menu" ><FontAwesomeIcon    className="w-6 h-6  "  icon={faBellConcierge} /></Link>
-                    <Link to="/contact" ><FontAwesomeIcon   className="w-6 h-6  "  icon={faComment} /></Link>
+                    <Link to="/about" ><FontAwesomeIcon  className="w-6 h-6 text-white " icon={faQuestion} /> </Link>
+                    <Link to="/" > <FontAwesomeIcon   className="w-6 h-6 text-white "  icon={faHouse} /></Link>
+                    <Link to="/menu" ><FontAwesomeIcon    className="w-6 h-6  text-white "  icon={faBellConcierge} /></Link>
+                    <Link to="/contact" ><FontAwesomeIcon   className="w-6 h-6  text-white "  icon={faComment} /></Link>
 
                 </div>
                 </>
