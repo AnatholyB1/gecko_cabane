@@ -17,7 +17,7 @@ function HomeInfo({ className} : { className? : string}) {
                     </div>
                     <div  className="grid grid-flow-row gap-1 px-5 md:w-[50rem]" >
                         <p className='text-center home-info-p'>Open time :</p>
-                        <p className='text-center home-info-p'>17:00 - 23:00</p>
+                        <p className='text-center home-info-p'>17:00 - 22:30</p>
                     </div>
                     <Button id="link about" title="link about" className="flex gap-2 hover:scale-105 transition-transform rounded-full" onClick={() => nav('/about')} ><BookOpen className='w-4 h-4 stroke-1'></BookOpen> Read More</Button>
             </section> );
