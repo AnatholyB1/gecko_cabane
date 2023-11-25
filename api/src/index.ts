@@ -10,10 +10,12 @@ import mongoose from 'mongoose';
 import router from './router';
 import dotenv from 'dotenv';
 import path from 'path';
-
+import swaggerUi from 'swagger-ui-express';
+import specs from './swaggerOptions'; // Assurez-vous d'ajuster le chemin en fonction de votre structure de projet
 
 
 const app = express();	// Création de l'application express
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(compression());	// Compression des requêtes 
 app.use(cors({
