@@ -3,6 +3,7 @@ import Gallery from "@/component/gallery"
 import HomeInfo from "@/component/home-info"
 import Lietmotive from "@/component/lietmotiv"
 import NewServices from "@/component/new-services"
+import PrizeSection from "@/component/prize"
 import Layer from "@/layer"
 
 export default function Home () {
@@ -16,6 +17,7 @@ export default function Home () {
                 <HomeInfo  className=" py-4"></HomeInfo>
                 <NewServices  className=" py-4"></NewServices>
                 <Comment  className=" py-4"></Comment>
+                <PrizeSection  className=" py-4"></PrizeSection>
                 <Gallery  className=" py-4"></Gallery>
             </section>     
         </Layer>
