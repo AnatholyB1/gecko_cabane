@@ -27,7 +27,7 @@ const formSchema = z.object({
 export default function Login() {
     const { toast } = useToast()
     const [loading, setLoading] = useState(false)
-    const [cookie,setCookie] = useCookies(['sessionToken']);
+    const [cookie] = useCookies(['sessionToken']);
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -44,7 +44,8 @@ export default function Login() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(values)
+            body: JSON.stringify(values),
+            credentials: 'include'
         });
         form.reset();
         setLoading(false);
@@ -53,7 +54,6 @@ export default function Login() {
         response.status === 502 && toast({title : 'Serveur error', description : 'Please contact the support'})
         response.status === 408 && toast({title : 'Connection Problem', description : 'Please contact the support or check your connection'})
         response.json().then((data : any) => {
-            setCookie('sessionToken', data.authentification.sessionToken, {path : '/'})
             toast({title : 'You are now logged in 🎉', description : 'welcolme' + data.name});
         });
     }

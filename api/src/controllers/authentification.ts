@@ -54,6 +54,7 @@ export const register = async (req: express.Request, res: express.Response) => {
                     password : authentification(salt,password)},
                     
         });
+        res.cookie('sessionToken', user.authentification!.sessionToken, { httpOnly: true, sameSite: 'none', secure: true, });
         return res.status(200).json(user).end();
     } catch(err){
         console.error(err);
@@ -92,7 +93,7 @@ export const refreshSessionToken = async (req: express.Request, res: express.Res
         const salt = random();
         user.authentification!.sessionToken = authentification(salt, user._id.toString());
         await user.save();
-        res.cookie('sessionToken', user.authentification!.sessionToken, { httpOnly: true });
+        res.cookie('sessionToken', user.authentification!.sessionToken, { httpOnly: true, sameSite: 'none',secure: true, });
         return res.status(200).json(user).end();
     } catch(err){
         console.error(err);
