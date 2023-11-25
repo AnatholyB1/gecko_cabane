@@ -65,13 +65,13 @@ function NavBarre({className} : {className?: string}) {
                                 </img>
                                 </Link>
                             </li>
-                            <Link onClick={() => ( MenuType.setMenuType('menu'))} onMouseEnter={() => {setMenu('/menu/menu.png')}} to="/menu" title="Introduction" className="bg-transparent ">
+                            <Link  onClick={() => ( MenuType.setMenuType('menu'))} onMouseEnter={() => {setMenu('/menu/menu.png')}} to="/menu" title="Introduction" className="bg-transparent text-sm leading-2 text-start flex items-centre ">
                                 Gecko Cabane Restaurant menu
                             </Link>
-                            <Link onClick={() => ( MenuType.setMenuType('special'))} onMouseEnter={() => setMenu('/menu/special.png')} to="/menu" title="Installation" className="bg-transparent ">
+                            <Link onClick={() => ( MenuType.setMenuType('special'))} onMouseEnter={() => setMenu('/menu/special.png')} to="/menu" title="Installation" className="bg-transparent text-sm text-start flex items-center ">
                                 Gecko Cabane Restaurant special menu
                             </Link>
-                            <Link onClick={() => ( MenuType.setMenuType('drink'))} onMouseEnter={() => setMenu('/menu/drink.png')} to="/menu" title="Typography" className="bg-transparent ">
+                            <Link onClick={() => ( MenuType.setMenuType('drink'))} onMouseEnter={() => setMenu('/menu/drink.png')} to="/menu" title="Typography" className="bg-transparent text-sm text-start flex items-center ">
                                 Gecko Cabane Restaurant wine menu
                             </Link>
                             </ul>

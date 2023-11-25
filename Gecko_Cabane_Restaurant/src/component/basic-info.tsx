@@ -1,13 +1,9 @@
 import { cn } from "@/lib/utils";
 import Separator from "./separator";
-//import Map from "./map-component/Map";
-//import googleMapReact from "google-map-react";
+import Map from "./map-component/Map";
 
-//const location : googleMapReact.Coords = {
 
- //   lat: 37.42216,
-  //  lng: -122.08427,
- // } // our location object from earlier
+
 
 function Info ({className } : {className ?: string}) {
     return ( 
@@ -22,8 +18,8 @@ function Info ({className } : {className ?: string}) {
                 <h5  className="secondary-title">CALL US</h5>
                 <a type={'phone'} className="home-info-p hover:text-primary transition duration-300 delay-150 hover:scale-105" href={`tel:+66819585945`}>+66 81 958 5945</a>
             </div>
-             <div className="bg-primary w-[300px] h-[300px] md:w-[500px] md:h-[500px] text-center grid place-items-center transition-all durantion-300 delay-150 hover:scale-105  ">
-                Map here soon...
+             <div className="bg-primary w-[300px] h-[300px] md:w-[500px] md:h-[500px] shadow-md transition-all durantion-300 delay-150 hover:scale-105  ">
+                <Map/>
              </div>
         </section>
      )
@@ -31,4 +27,3 @@ function Info ({className } : {className ?: string}) {
 
 export default Info;    
 
-//<Map location={location} zoomLevel={17} text= {'1600 Amphitheatre Parkway, Mountain View, california.'} ></Map>

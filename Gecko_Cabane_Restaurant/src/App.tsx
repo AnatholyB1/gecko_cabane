@@ -16,6 +16,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { CookiesProvider } from 'react-cookie'
 import Admin from './page/admin.tsx'
 import { AdminProvider } from './Provider/admin-provider.tsx'
+import Settings from './page/settings.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
         <Route path='*' element={<NotFound/>} ></Route>
         <Route path='menu' element={<Menu/>} ></Route>
         <Route path='admin' element={<Admin/>} ></Route>
+        <Route path='settings' element={<Settings/>} ></Route>
     </Route>
   )
 )
