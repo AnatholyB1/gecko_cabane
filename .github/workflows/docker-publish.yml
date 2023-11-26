@@ -23,7 +23,7 @@ jobs:
             repo: context.repo.repo,
           });
           const latestRelease = releases.data[0];
-          return latestRelease.tag_name;
+          return latestRelease.tag_name.replace(/"/g, '');
 
     - name: Login to DockerHub
       uses: docker/login-action@v1 
