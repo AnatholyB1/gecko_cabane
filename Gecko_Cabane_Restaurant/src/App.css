@@ -25,7 +25,7 @@
     --input: #FFFFFF;
     --ring: 142.1 76.2% 36.3%;
     --radius: 0.5rem;
-    --gradient: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    --gradient: #B4D8C1;
     --footer: 240 5.9% 90%;
     --text : #000000;
     --admin : #eceaea;
@@ -53,7 +53,7 @@
     --border: 240 3.7% 15.9%;
     --input: #FFFFFF;
     --ring: 142.4 71.8% 29.2%;
-    --gradient: linear-gradient(120deg, #000000 0%, #808080 70%, #96e6a1 100%);
+    --gradient: #555555;
     --footer: 0 0% 100%;
     --text : #ffffff;
     --animate: #ffffff;
@@ -70,7 +70,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: var(--gradient);
+    background-color: var(--gradient);
 
   }
 }
