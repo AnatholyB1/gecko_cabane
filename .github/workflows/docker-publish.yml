@@ -38,4 +38,4 @@ jobs:
         context: ./api/
         file: ./api/Dockerfile
         push: true
-        tags: anatholyb/gecko_api:${{ steps.latest_release.outputs.result }}
+        tags: anatholyb/gecko_api:v1.0.0
