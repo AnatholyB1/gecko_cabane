@@ -13,6 +13,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Get the latest release
+      id: latest_release
+      uses: actions/github-script@v3
+      with:
+        script: |
+          const releases = await github.repos.listReleases({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          });
+          const latestRelease = releases.data[0];
+          return latestRelease.tag_name;
+
     - name: Login to DockerHub
       uses: docker/login-action@v1 
       with:
@@ -25,4 +37,4 @@ jobs:
         context: ./api/
         file: ./api/Dockerfile
         push: true
-        tags: anatholyb/gecko_api:${{ github.sha }}
+        tags: anatholyb/gecko_api:${{ steps.latest_release.outputs.result }}
