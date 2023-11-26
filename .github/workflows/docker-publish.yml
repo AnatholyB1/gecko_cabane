@@ -24,7 +24,7 @@ jobs:
           });
           const latestRelease = releases.data[0];
           console.log(latestRelease.tag_name)
-          return latestRelease.tag_name.replace(/[\\"]/g, '');
+          return latestRelease.tag_name.replace(/["\\]/g, '');
 
     - name: Login to DockerHub
       uses: docker/login-action@v1 
@@ -38,4 +38,4 @@ jobs:
         context: ./api/
         file: ./api/Dockerfile
         push: true
-        tags: anatholyb/gecko_api:v1.0.0
+        tags: anatholyb/gecko_api:${{ steps.latest_release.outputs.result }}
