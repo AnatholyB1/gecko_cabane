@@ -22,7 +22,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: ./api/
+        context: ./api/.
         file: ./Dockerfile
         push: true
         tags: anatholyb/gecko_api:${{ github.sha }}
