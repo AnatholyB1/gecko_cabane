@@ -34,10 +34,36 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Docker image
+    - name: Build and push Docker image for api
+      uses: docker/build-push-action@v2
+      with:
+        context: ./api/
+        file: ./api/Dockerfile
+        push: true
+        tags: anatholyb/gecko_api:latest
+
+    - name: Build and push Docker image for api
       uses: docker/build-push-action@v2
       with:
         context: ./api/
         file: ./api/Dockerfile
         push: true
         tags: anatholyb/gecko_api:${{ env.DOCKER_TAG }}
+    
+
+    - name: Build and push Docker image for front
+      uses: docker/build-push-action@v2
+      with:
+        context: ./Gecko_Cabane_Restaurant/
+        file: ./Gecko_Cabane_Restaurant/Dockerfile
+        push: true
+        tags: anatholyb/gecko_cabane_restaurant:${{ env.DOCKER_TAG }}
+
+    
+    - name: Build and push Docker image for front
+      uses: docker/build-push-action@v2
+      with:
+        context: ./Gecko_Cabane_Restaurant/
+        file: ./Gecko_Cabane_Restaurant/Dockerfile
+        push: true
+        tags: anatholyb/gecko_cabane_restaurant:latest
