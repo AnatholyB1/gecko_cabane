@@ -52,7 +52,7 @@ function FormComponent({className} : {className?: string}) {
      
       function onSubmit(values: z.infer<typeof formSchema>) {
         setLoading(true);
-          axios.post("https://gecko-api-mbde.onrender.com/email/send", values)
+          axios.post("/api/email/send", values)
             .then(() => {
               toast({title: "Message sent ", description: "We will contact you as soon as possible " + values.firstName, action :<Player className="w-10 h-10 fill-animate" autoplay={true} src={success}/>});
               setLoading(false);

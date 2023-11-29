@@ -48,7 +48,7 @@ export function EditFile({...props} : EditFileProps) {
     useEffect(() => {
         if( typeof props.item.file == "string")
         {
-            urlToFile("https://gecko-api-mbde.onrender.com/" + props.item.file, props.item.name, 'image/*')
+            urlToFile("/api/" + props.item.file, props.item.name, 'image/*')
         }else if(props.item.file instanceof File){
             setFile(props.item.file)
             setPreview(URL.createObjectURL(props.item.file))

@@ -19,7 +19,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use(compression());	// Compression des requêtes 
 app.use(cors({
-    origin: ['http://localhost:5173', 'https://geckocabanerestaurant.vercel.app'],  // Remplacez ceci par l'URL de votre application cliente
+    origin: ['*'],  // Remplacez ceci par l'URL de votre application cliente
     credentials: true, // Cela permet d'accepter les cookies
   }));
 app.use(boydParser.json());	// Parser les requêtes en JSON

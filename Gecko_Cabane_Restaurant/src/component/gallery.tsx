@@ -40,7 +40,7 @@ function Gallery({className} : {className?: string}) {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`https://gecko-api-mbde.onrender.com/image/type/largeAssets`);
+            const response = await axios.get(`/api/image/type/largeAssets`);
             if(response.status === 200) {
                 setImages(response.data);
 
@@ -77,7 +77,7 @@ function Gallery({className} : {className?: string}) {
        className="w-screen flex items-center justify-center h-full">
         {images?.map((image) => 
           <SwiperSlide key={image._id}>
-            <img alt="oups" className="  rounded-md transiton duration-300 delay-150  hover:scale-110" src={`https://gecko-api-mbde.onrender.com/${image.file}`} />
+            <img alt="oups" className="  rounded-md transiton duration-300 delay-150  hover:scale-110" src={`/api/${image.file}`} />
           </SwiperSlide>
         )
         }

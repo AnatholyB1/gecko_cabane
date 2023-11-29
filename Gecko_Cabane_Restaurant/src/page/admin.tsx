@@ -16,7 +16,7 @@ function Admin() {
 
     const testLogin = async () => {
         try {
-            const res = await axios.get('https://gecko-api-mbde.onrender.com/auth/isLoggedasAdmin', { withCredentials: true })
+            const res = await axios.get('/api/auth/isLoggedasAdmin', { withCredentials: true })
             res.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme ' + res.data.name});
             setAdmin(true)
             setLoading(false)
@@ -25,7 +25,7 @@ function Admin() {
             switch(error.response.status) {
                 case 401:
                     try{
-                        const response = await axios.get('https://gecko-api-mbde.onrender.com/auth/refreshtoken', { withCredentials: true })
+                        const response = await axios.get('/api/auth/refreshtoken', { withCredentials: true })
                         setCookie('sessionToken', response.data.authentification.sessionToken, {path : '/'})
                         response.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme' + response.data.name});
                         setLoading(false)
@@ -44,7 +44,7 @@ function Admin() {
                     break;
                 case 403 :
                     try{
-                        const response = await axios.get('https://gecko-api-mbde.onrender.com/auth/refreshtoken', { withCredentials: true })
+                        const response = await axios.get('/api/auth/refreshtoken', { withCredentials: true })
                         setCookie('sessionToken', response.data.authentification.sessionToken, {path : '/'})
                         response.status === 200 && toast({title : 'You are now logged in 🎉', description : 'welcolme' + response.data.name});
                         setLoading(false)

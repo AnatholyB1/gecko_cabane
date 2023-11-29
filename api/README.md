@@ -35,7 +35,7 @@ You can also pull the Docker image from Docker Hub:
 
 ## API Documentation
 
-API documentation is available using Swagger. Access the Swagger UI at `http://localhost:8080/api-docs`.
+API documentation is available using Swagger. Access the Swagger UI at `http://localhost:8080/api-docs` or geckkocabanerestaurant/api/api-docs.
 
 ## License
 

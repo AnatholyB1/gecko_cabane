@@ -28,7 +28,7 @@ function  Preview ({...props} : PreviewProps) {
     useEffect(() => {
         if(props.api)
         {
-            axios.get(`https://gecko-api-mbde.onrender.com/image/type/${props.api}`, {
+            axios.get(`/api/image/type/${props.api}`, {
                 headers: {
                     Authorization: `Bearer ${cookie}`
                 }
@@ -64,7 +64,7 @@ function  Preview ({...props} : PreviewProps) {
                     images[0] ? 
                         images.map((image) =>
                             <div className="relative w-[116px] m-2 grid grid-flow-dense shadow-md col-span-1 row-span-1 rounded-md p-2" key={image._id}>
-                            <img    src={`https://gecko-api-mbde.onrender.com/${image?.file}`} 
+                            <img    src={`/api/${image?.file}`} 
                                     alt="failed in api" 
                                     className={`w-[100px] h-[100px] rounded-md shadow-md ${typeof deletedItemsId.find((id) => id === image._id) != 'undefined' && 'grayscale animate-delete-item'}`}/>
                                         {typeof deletedItemsId.find((id) => id === image._id) == 'undefined'  ? 

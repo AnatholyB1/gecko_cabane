@@ -39,7 +39,7 @@ export default function Login() {
     cookie
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
-        const response = await fetch('https://gecko-api-mbde.onrender.com/auth/login', {
+        const response = await fetch('/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ function Update({...props} : UpadteProps) {
     useEffect(() => {
         if(props.api)
         {
-            axios.get(`https://gecko-api-mbde.onrender.com/image/type/${props.api}`, {
+            axios.get(`/api/image/type/${props.api}`, {
                 headers: {
                     Authorization: `Bearer ${cookie}`
                 }
@@ -52,7 +52,7 @@ function Update({...props} : UpadteProps) {
                         images.map((image) =>
                             <EditFile disabled={props.disabled} key={image._id} item={image} onChange={(value) => updateImage(value)} >
                                 <div  className="relative w-[116px] m-2 grid grid-flow-dense shadow-md rounded-md p-2 transform delay-150 duration-300 hover:scale-110 hover:cursor-pointer" >
-                                <img    src={typeof image.file != 'string' ? URL.createObjectURL(image.file) : `https://gecko-api-mbde.onrender.com/${image.file}` } 
+                                <img    src={typeof image.file != 'string' ? URL.createObjectURL(image.file) : `/api/${image.file}` } 
                                         alt="failed in api" 
                                         className={`w-[100px] h-[100px] rounded-md shadow-md `}/>
                                 <p className="text-center">{image.name}</p>

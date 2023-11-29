@@ -70,7 +70,7 @@ function ItemSelection({...props} : ItemSelectionProps) {
             const formData = new FormData();
             Object.keys(item).forEach(key => formData.append(key, item[key as keyof ImageAddType]));
           
-            const response = await axios.post('https://gecko-api-mbde.onrender.com/image/create', formData, { 
+            const response = await axios.post('/api/image/create', formData, { 
               withCredentials: true,
               headers: {
                 'Content-Type': 'multipart/form-data'
@@ -82,7 +82,7 @@ function ItemSelection({...props} : ItemSelectionProps) {
 
         const previewRequest = async (item: string) => {
             // Remplacer par votre URL et vos paramètres
-            const response = await axios.delete(`https://gecko-api-mbde.onrender.com/image/${item}`,{ withCredentials: true });
+            const response = await axios.delete(`/api/image/${item}`,{ withCredentials: true });
             return response.data;
         }
         
@@ -90,7 +90,7 @@ function ItemSelection({...props} : ItemSelectionProps) {
         const formData = new FormData();
         Object.keys(item).forEach(key => {if(!preview.find((sub) => sub == item._id)){formData.append(key, item[key as keyof ImageUpdateType])}});
 
-        const response = await axios.put(`https://gecko-api-mbde.onrender.com/image/${item._id}`, formData, { 
+        const response = await axios.put(`/api/image/${item._id}`, formData, { 
             withCredentials: true,
             headers: {
             'Content-Type': 'multipart/form-data'

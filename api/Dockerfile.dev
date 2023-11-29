@@ -1,0 +1,22 @@
+# Specify the base image
+FROM node:20.10.0-slim
+
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json .
+
+# Copy the rest of the application code
+COPY . .
+
+# Install dependencies
+RUN npm run build
+
+
+# Expose the port on which the API will run
+EXPOSE 8080
+
+# Start the API
+CMD ["npm", "run", "start"]
