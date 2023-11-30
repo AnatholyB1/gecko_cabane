@@ -4,6 +4,7 @@ import fs from 'fs';
 
 import {getImageById, deleteImageById, updateImageById,getImageByName, getImagesByType, getImagesList, createImage } from '../db/image';
 import {formatImage } from '../helpers/imageformating';
+import path from 'path';
 
 
 // Function to get an image by its ID
@@ -29,12 +30,24 @@ export const deleteanImageById = async (req: express.Request, res: express.Respo
         // Code to delete the image by its ID
         const {id} = req.params;
         if (!id) return res.sendStatus(400);
+
+
+        const imagetodelete = await getImageById(id);
+        if (!imagetodelete) return res.sendStatus(404);
+
+        const filePath = path.join(__dirname, '..', imagetodelete.file);
+        // Delete the file
+        try {
+            fs.unlinkSync(filePath);
+        } catch (err) {
+            console.error(`Error deleting file: ${err}`);
+            return res.sendStatus(500);
+        }
+
+
         const deletedImage = await deleteImageById(id);
         if (!deletedImage) return res.sendStatus(404);
-        fs.unlink(deletedImage.file , (err) => {
-            if (err) {
-                console.error(err)
-                }});
+        
         return res.status(200).json(deletedImage).end();
     } catch (error) {
         // Code to handle errors

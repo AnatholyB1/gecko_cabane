@@ -27,7 +27,7 @@ export const createImage = async (values: Record<string, any>) => new ImageModel
 //creqte every function already created in the files with ByName suffix for ById suffix
 //
 export const getImageById = async (id: string) =>  ImageModel.findById(  id ) ;
-export const deleteImageById = async (id: string) => ImageModel.findByIdAndDelete( id );
+export const deleteImageById = async (id: string) => ImageModel.findByIdAndDelete( id )
 export const updateImageById =async (id:string, values:Record<string, any>) => ImageModel.findByIdAndUpdate( id, values, { new: true } ).then((image) => image?.toObject());
 
 
